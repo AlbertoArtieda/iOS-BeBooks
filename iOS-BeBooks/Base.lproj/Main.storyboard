@@ -74,14 +74,44 @@
                                     </attributedString>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-Hp-gkC">
+                                <rect key="frame" x="108" y="699.5" width="198" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="¿No estás registrado?">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Nunito-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-T4-nWL">
+                                <rect key="frame" x="152" y="728.5" width="117" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Regístrate">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dny-WQ-BKR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YtB-Hp-gkC" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="108" id="2nB-9k-jOe"/>
+                            <constraint firstItem="YtB-Hp-gkC" firstAttribute="top" secondItem="Pco-Xt-b9v" secondAttribute="bottom" constant="117" id="C2P-AQ-eog"/>
+                            <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="QeH-T4-nWL" secondAttribute="trailing" constant="145" id="C6N-g1-gNU"/>
                             <constraint firstItem="EEW-IR-LOV" firstAttribute="top" secondItem="dny-WQ-BKR" secondAttribute="top" constant="40" id="E7r-Si-cO6"/>
                             <constraint firstItem="0Yx-o5-ZIv" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="151" id="FRF-Ka-5he"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="EEW-IR-LOV" secondAttribute="trailing" constant="160" id="MjI-Hw-G5z"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="bottom" secondItem="9Nh-Ml-WW6" secondAttribute="bottom" constant="400" id="Veq-Jj-s4h"/>
+                            <constraint firstItem="QeH-T4-nWL" firstAttribute="top" secondItem="YtB-Hp-gkC" secondAttribute="bottom" constant="5" id="Y07-cf-ea0"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="0Yx-o5-ZIv" secondAttribute="trailing" constant="151" id="aIu-tQ-pfR"/>
                             <constraint firstItem="Pco-Xt-b9v" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="60" id="aMB-qF-ZhW"/>
                             <constraint firstItem="EEW-IR-LOV" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="160" id="bBI-qh-13B"/>
@@ -89,8 +119,10 @@
                             <constraint firstItem="7Rv-uP-GIA" firstAttribute="top" secondItem="9Nh-Ml-WW6" secondAttribute="bottom" constant="20" id="cgj-FC-m4h"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="Pco-Xt-b9v" secondAttribute="trailing" constant="60" id="eRW-V1-tSl"/>
                             <constraint firstItem="9Nh-Ml-WW6" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="60" id="f3s-Uq-UoN"/>
+                            <constraint firstItem="QeH-T4-nWL" firstAttribute="leading" secondItem="dny-WQ-BKR" secondAttribute="leading" constant="152" id="gXD-S9-5hy"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="7Rv-uP-GIA" secondAttribute="trailing" constant="60" id="gYe-aM-eq9"/>
                             <constraint firstItem="0Yx-o5-ZIv" firstAttribute="top" secondItem="EEW-IR-LOV" secondAttribute="bottom" constant="73" id="kEh-Sa-M4i"/>
+                            <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="YtB-Hp-gkC" secondAttribute="trailing" constant="108" id="oVR-YF-jg1"/>
                             <constraint firstItem="dny-WQ-BKR" firstAttribute="trailing" secondItem="9Nh-Ml-WW6" secondAttribute="trailing" constant="60" id="uno-48-GIX"/>
                             <constraint firstItem="Pco-Xt-b9v" firstAttribute="top" secondItem="7Rv-uP-GIA" secondAttribute="bottom" constant="20" id="wdh-Kb-Q6z"/>
                         </constraints>
@@ -111,72 +143,99 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeBooksLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-ld-mxZ">
                                 <rect key="frame" x="160" y="84" width="94" height="106"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-mw-qWX">
-                                <rect key="frame" x="116" y="210" width="183" height="47"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-hz-WwS">
+                                <rect key="frame" x="60" y="283" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Apellido" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cid-yg-ANZ">
+                                <rect key="frame" x="60" y="331.5" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDH-5o-F58">
+                                <rect key="frame" x="60" y="380" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-r4-yYF">
+                                <rect key="frame" x="60" y="428.5" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirma tu contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-gT-keH">
+                                <rect key="frame" x="60" y="477" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-Bu-9ap">
+                                <rect key="frame" x="60" y="525.5" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Código postal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-9W-Pft">
+                                <rect key="frame" x="60" y="574" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-Uk-Pt7">
+                                <rect key="frame" x="60" y="622.5" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-Za-zvM">
+                                <rect key="frame" x="60" y="671" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-W3-AdD">
+                                <rect key="frame" x="59" y="729.5" width="155" height="36.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Añadir foto">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="19" name="Nunito-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G77-Mp-oVD">
+                                <rect key="frame" x="60" y="210" width="294" height="48"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Regístrate">
                                         <attributes>
-                                            <font key="NSFont" size="40" name="Nunito-Bold"/>
+                                            <font key="NSFont" size="41" name="Nunito-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J77-IG-JvL">
+                                <rect key="frame" x="114" y="791" width="186" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="¿Ya estás registrado?">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-hz-WwS">
-                                <rect key="frame" x="60" y="282" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Apellido" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cid-yg-ANZ">
-                                <rect key="frame" x="60" y="330.5" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDH-5o-F58">
-                                <rect key="frame" x="60" y="379" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-r4-yYF">
-                                <rect key="frame" x="60" y="427.5" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirma tu contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-gT-keH">
-                                <rect key="frame" x="60" y="476" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-Bu-9ap">
-                                <rect key="frame" x="60" y="524.5" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Código postal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-9W-Pft">
-                                <rect key="frame" x="60" y="573" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-Uk-Pt7">
-                                <rect key="frame" x="60" y="621.5" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Teléfono" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-Za-zvM">
-                                <rect key="frame" x="60" y="670" width="294" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-W3-AdD">
-                                <rect key="frame" x="59" y="751" width="294" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sus-kS-I2p">
+                                <rect key="frame" x="152" y="814" width="115" height="38"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Entrar">
+                                        <fragment content="Entra aquí">
                                             <attributes>
-                                                <font key="NSFont" size="24" name="Nunito-Bold"/>
+                                                <font key="NSFont" size="20" name="Nunito-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -188,27 +247,36 @@
                         <constraints>
                             <constraint firstItem="ldB-Bu-9ap" firstAttribute="top" secondItem="qA3-gT-keH" secondAttribute="bottom" constant="10" id="3A2-Os-dTB"/>
                             <constraint firstItem="ldB-Bu-9ap" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="5Sc-XE-rNI"/>
-                            <constraint firstItem="JbY-mw-qWX" firstAttribute="top" secondItem="JrO-ld-mxZ" secondAttribute="bottom" constant="20" id="7F3-QV-goi"/>
+                            <constraint firstItem="CpU-W3-AdD" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="59" id="6yb-83-eyQ"/>
+                            <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="CpU-W3-AdD" secondAttribute="trailing" constant="200" id="7a4-4Q-iEg"/>
+                            <constraint firstItem="3d1-19-4Df" firstAttribute="bottom" secondItem="sus-kS-I2p" secondAttribute="bottom" constant="10" id="AHw-kl-Ylf"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="t5P-r4-yYF" secondAttribute="trailing" constant="60" id="Apo-xI-61s"/>
                             <constraint firstItem="eHy-Uk-Pt7" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="By1-WX-3l2"/>
+                            <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="sus-kS-I2p" secondAttribute="trailing" constant="147" id="CKA-XD-ei7"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="Ebp-9W-Pft" secondAttribute="trailing" constant="60" id="Ca7-SE-YuU"/>
                             <constraint firstItem="Ebp-9W-Pft" firstAttribute="top" secondItem="ldB-Bu-9ap" secondAttribute="bottom" constant="10" id="DPX-KN-6nf"/>
                             <constraint firstItem="lS3-Za-zvM" firstAttribute="top" secondItem="eHy-Uk-Pt7" secondAttribute="bottom" constant="10" id="H1B-N4-M2d"/>
                             <constraint firstItem="lS3-Za-zvM" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="KDR-8P-IKZ"/>
                             <constraint firstItem="t5P-r4-yYF" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="L0f-HY-KxD"/>
-                            <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="JbY-mw-qWX" secondAttribute="trailing" constant="115" id="OsL-fb-9Wr"/>
+                            <constraint firstItem="J77-IG-JvL" firstAttribute="top" secondItem="CpU-W3-AdD" secondAttribute="bottom" constant="25" id="LuO-Da-tyV"/>
                             <constraint firstItem="3kn-hz-WwS" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="Pft-3Q-7Fw"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="ldB-Bu-9ap" secondAttribute="trailing" constant="60" id="RUb-vj-B29"/>
+                            <constraint firstItem="G77-Mp-oVD" firstAttribute="top" secondItem="JrO-ld-mxZ" secondAttribute="bottom" constant="20" id="RWV-jy-qPQ"/>
+                            <constraint firstItem="CpU-W3-AdD" firstAttribute="top" secondItem="lS3-Za-zvM" secondAttribute="bottom" constant="20" id="THU-NH-SuB"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="Cid-yg-ANZ" secondAttribute="trailing" constant="60" id="TnR-y6-dzN"/>
                             <constraint firstItem="Ebp-9W-Pft" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="VtB-gG-wsg"/>
-                            <constraint firstItem="JbY-mw-qWX" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="116" id="Vve-t0-toB"/>
-                            <constraint firstItem="3kn-hz-WwS" firstAttribute="top" secondItem="JbY-mw-qWX" secondAttribute="bottom" constant="25" id="Xje-0V-9hp"/>
+                            <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="G77-Mp-oVD" secondAttribute="trailing" constant="60" id="YC2-lw-xLI"/>
                             <constraint firstItem="JrO-ld-mxZ" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="160" id="Z96-uf-xSJ"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="eHy-Uk-Pt7" secondAttribute="trailing" constant="60" id="ZTe-Zj-gnd"/>
                             <constraint firstItem="eHy-Uk-Pt7" firstAttribute="top" secondItem="Ebp-9W-Pft" secondAttribute="bottom" constant="10" id="aat-E8-cMz"/>
+                            <constraint firstItem="3kn-hz-WwS" firstAttribute="top" secondItem="G77-Mp-oVD" secondAttribute="bottom" constant="25" id="bO8-ae-Izl"/>
+                            <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="J77-IG-JvL" secondAttribute="trailing" constant="114" id="cKI-O1-A8x"/>
+                            <constraint firstItem="J77-IG-JvL" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="114" id="cml-wx-ME0"/>
                             <constraint firstItem="eDH-5o-F58" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="duj-6Q-vlH"/>
                             <constraint firstItem="qA3-gT-keH" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="e7L-zL-vSW"/>
+                            <constraint firstItem="sus-kS-I2p" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="152" id="ena-rN-rSM"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="eDH-5o-F58" secondAttribute="trailing" constant="60" id="jhJ-7w-CHY"/>
+                            <constraint firstItem="G77-Mp-oVD" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="let-3U-gnn"/>
                             <constraint firstItem="JrO-ld-mxZ" firstAttribute="top" secondItem="3d1-19-4Df" secondAttribute="top" constant="40" id="nC1-qS-ICf"/>
                             <constraint firstItem="Cid-yg-ANZ" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="nNc-Hv-Z1j"/>
                             <constraint firstItem="Cid-yg-ANZ" firstAttribute="top" secondItem="3kn-hz-WwS" secondAttribute="bottom" constant="10" id="ox8-yQ-BJE"/>
