@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */; };
+		0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */; };
+		0DCDA1E02987DD6D0021551D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DF2987DD6D0021551D /* ViewController.swift */; };
+		0DCDA1E32987DD6D0021551D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DCDA1E12987DD6D0021551D /* Main.storyboard */; };
+		0DCDA1E52987DD6E0021551D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCDA1E42987DD6E0021551D /* Assets.xcassets */; };
+		0DCDA1E82987DD6E0021551D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DCDA1E62987DD6E0021551D /* LaunchScreen.storyboard */; };
+		0DCDA1F32987DD6E0021551D /* iOS_BeBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1F22987DD6E0021551D /* iOS_BeBooksTests.swift */; };
+		0DCDA1FD2987DD6E0021551D /* iOS_BeBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */; };
+		0DCDA1FF2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DCDA1EF2987DD6E0021551D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DCDA1D02987DD6D0021551D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DCDA1D72987DD6D0021551D;
+			remoteInfo = "iOS-BeBooks";
+		};
+		0DCDA1F92987DD6E0021551D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DCDA1D02987DD6D0021551D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DCDA1D72987DD6D0021551D;
+			remoteInfo = "iOS-BeBooks";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DCDA1D82987DD6D0021551D /* iOS-BeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-BeBooks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0DCDA1DF2987DD6D0021551D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DCDA1E22987DD6D0021551D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DCDA1E42987DD6E0021551D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DCDA1E72987DD6E0021551D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0DCDA1E92987DD6E0021551D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DCDA1EE2987DD6E0021551D /* iOS-BeBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-BeBooksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCDA1F22987DD6E0021551D /* iOS_BeBooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksTests.swift; sourceTree = "<group>"; };
+		0DCDA1F82987DD6E0021551D /* iOS-BeBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-BeBooksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksUITests.swift; sourceTree = "<group>"; };
+		0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DCDA1D52987DD6D0021551D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1EB2987DD6E0021551D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1F52987DD6E0021551D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DCDA1CF2987DD6D0021551D = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1DA2987DD6D0021551D /* iOS-BeBooks */,
+				0DCDA1F12987DD6E0021551D /* iOS-BeBooksTests */,
+				0DCDA1FB2987DD6E0021551D /* iOS-BeBooksUITests */,
+				0DCDA1D92987DD6D0021551D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0DCDA1D92987DD6D0021551D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1D82987DD6D0021551D /* iOS-BeBooks.app */,
+				0DCDA1EE2987DD6E0021551D /* iOS-BeBooksTests.xctest */,
+				0DCDA1F82987DD6E0021551D /* iOS-BeBooksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DCDA1DA2987DD6D0021551D /* iOS-BeBooks */ = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */,
+				0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */,
+				0DCDA1DF2987DD6D0021551D /* ViewController.swift */,
+				0DCDA1E12987DD6D0021551D /* Main.storyboard */,
+				0DCDA1E42987DD6E0021551D /* Assets.xcassets */,
+				0DCDA1E62987DD6E0021551D /* LaunchScreen.storyboard */,
+				0DCDA1E92987DD6E0021551D /* Info.plist */,
+			);
+			path = "iOS-BeBooks";
+			sourceTree = "<group>";
+		};
+		0DCDA1F12987DD6E0021551D /* iOS-BeBooksTests */ = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1F22987DD6E0021551D /* iOS_BeBooksTests.swift */,
+			);
+			path = "iOS-BeBooksTests";
+			sourceTree = "<group>";
+		};
+		0DCDA1FB2987DD6E0021551D /* iOS-BeBooksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */,
+				0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */,
+			);
+			path = "iOS-BeBooksUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DCDA1D72987DD6D0021551D /* iOS-BeBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DCDA2022987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooks" */;
+			buildPhases = (
+				0DCDA1D42987DD6D0021551D /* Sources */,
+				0DCDA1D52987DD6D0021551D /* Frameworks */,
+				0DCDA1D62987DD6D0021551D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-BeBooks";
+			productName = "iOS-BeBooks";
+			productReference = 0DCDA1D82987DD6D0021551D /* iOS-BeBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0DCDA1ED2987DD6E0021551D /* iOS-BeBooksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DCDA2052987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksTests" */;
+			buildPhases = (
+				0DCDA1EA2987DD6E0021551D /* Sources */,
+				0DCDA1EB2987DD6E0021551D /* Frameworks */,
+				0DCDA1EC2987DD6E0021551D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DCDA1F02987DD6E0021551D /* PBXTargetDependency */,
+			);
+			name = "iOS-BeBooksTests";
+			productName = "iOS-BeBooksTests";
+			productReference = 0DCDA1EE2987DD6E0021551D /* iOS-BeBooksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0DCDA1F72987DD6E0021551D /* iOS-BeBooksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DCDA2082987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksUITests" */;
+			buildPhases = (
+				0DCDA1F42987DD6E0021551D /* Sources */,
+				0DCDA1F52987DD6E0021551D /* Frameworks */,
+				0DCDA1F62987DD6E0021551D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DCDA1FA2987DD6E0021551D /* PBXTargetDependency */,
+			);
+			name = "iOS-BeBooksUITests";
+			productName = "iOS-BeBooksUITests";
+			productReference = 0DCDA1F82987DD6E0021551D /* iOS-BeBooksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DCDA1D02987DD6D0021551D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					0DCDA1D72987DD6D0021551D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					0DCDA1ED2987DD6E0021551D = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 0DCDA1D72987DD6D0021551D;
+					};
+					0DCDA1F72987DD6E0021551D = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 0DCDA1D72987DD6D0021551D;
+					};
+				};
+			};
+			buildConfigurationList = 0DCDA1D32987DD6D0021551D /* Build configuration list for PBXProject "iOS-BeBooks" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DCDA1CF2987DD6D0021551D;
+			productRefGroup = 0DCDA1D92987DD6D0021551D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DCDA1D72987DD6D0021551D /* iOS-BeBooks */,
+				0DCDA1ED2987DD6E0021551D /* iOS-BeBooksTests */,
+				0DCDA1F72987DD6E0021551D /* iOS-BeBooksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DCDA1D62987DD6D0021551D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DCDA1E82987DD6E0021551D /* LaunchScreen.storyboard in Resources */,
+				0DCDA1E52987DD6E0021551D /* Assets.xcassets in Resources */,
+				0DCDA1E32987DD6D0021551D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1EC2987DD6E0021551D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1F62987DD6E0021551D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DCDA1D42987DD6D0021551D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DCDA1E02987DD6D0021551D /* ViewController.swift in Sources */,
+				0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */,
+				0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1EA2987DD6E0021551D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DCDA1F32987DD6E0021551D /* iOS_BeBooksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DCDA1F42987DD6E0021551D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DCDA1FF2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift in Sources */,
+				0DCDA1FD2987DD6E0021551D /* iOS_BeBooksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DCDA1F02987DD6E0021551D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DCDA1D72987DD6D0021551D /* iOS-BeBooks */;
+			targetProxy = 0DCDA1EF2987DD6E0021551D /* PBXContainerItemProxy */;
+		};
+		0DCDA1FA2987DD6E0021551D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DCDA1D72987DD6D0021551D /* iOS-BeBooks */;
+			targetProxy = 0DCDA1F92987DD6E0021551D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0DCDA1E12987DD6D0021551D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DCDA1E22987DD6D0021551D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DCDA1E62987DD6E0021551D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DCDA1E72987DD6E0021551D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0DCDA2002987DD6E0021551D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0DCDA2012987DD6E0021551D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DCDA2032987DD6E0021551D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS-BeBooks/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DCDA2042987DD6E0021551D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS-BeBooks/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0DCDA2062987DD6E0021551D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-BeBooks.app/iOS-BeBooks";
+			};
+			name = Debug;
+		};
+		0DCDA2072987DD6E0021551D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS-BeBooks.app/iOS-BeBooks";
+			};
+			name = Release;
+		};
+		0DCDA2092987DD6E0021551D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-BeBooks";
+			};
+			name = Debug;
+		};
+		0DCDA20A2987DD6E0021551D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cev.iOS-BeBooksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS-BeBooks";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DCDA1D32987DD6D0021551D /* Build configuration list for PBXProject "iOS-BeBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DCDA2002987DD6E0021551D /* Debug */,
+				0DCDA2012987DD6E0021551D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DCDA2022987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DCDA2032987DD6E0021551D /* Debug */,
+				0DCDA2042987DD6E0021551D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DCDA2052987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DCDA2062987DD6E0021551D /* Debug */,
+				0DCDA2072987DD6E0021551D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DCDA2082987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DCDA2092987DD6E0021551D /* Debug */,
+				0DCDA20A2987DD6E0021551D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DCDA1D02987DD6D0021551D /* Project object */;
+}
