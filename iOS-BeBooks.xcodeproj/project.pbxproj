@@ -91,6 +91,7 @@
 			children = (
 				0DCDA1DA2987DD6D0021551D /* iOS-BeBooks */,
 				0DCDA1F12987DD6E0021551D /* iOS-BeBooksTests */,
+				0DC35996298910D100D4947B /* Fonts */,
 				0DCDA1FB2987DD6E0021551D /* iOS-BeBooksUITests */,
 				0DCDA1D92987DD6D0021551D /* Products */,
 			);
@@ -133,7 +134,6 @@
 			children = (
 				0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */,
 				0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */,
-				0DC35996298910D100D4947B /* Fonts */,
 			);
 			path = "iOS-BeBooksUITests";
 			sourceTree = "<group>";
