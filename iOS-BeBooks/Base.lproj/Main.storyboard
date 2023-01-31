@@ -41,11 +41,12 @@
                                 <rect key="frame" x="160" y="84" width="94" height="106"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yx-o5-ZIv">
-                                <rect key="frame" x="151" y="263" width="112" height="47"/>
+                                <rect key="frame" x="155.5" y="263" width="103.5" height="49.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Log In">
                                         <attributes>
-                                            <font key="NSFont" size="40" name="Nunito-Bold"/>
+                                            <font key="NSFont" size="36" name="Nunito-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -57,12 +58,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Rv-uP-GIA">
-                                <rect key="frame" x="60" y="472" width="294" height="38.5"/>
+                                <rect key="frame" x="60" y="472" width="294" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pco-Xt-b9v">
-                                <rect key="frame" x="60" y="530.5" width="294" height="42"/>
+                                <rect key="frame" x="60" y="529" width="294" height="47"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="medium">
                                     <attributedString key="attributedTitle">
@@ -75,7 +76,7 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-Hp-gkC">
-                                <rect key="frame" x="108" y="689.5" width="198" height="24"/>
+                                <rect key="frame" x="107.5" y="693" width="199.5" height="27.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="¿No estás registrado?">
                                         <attributes>
@@ -87,7 +88,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-T4-nWL">
-                                <rect key="frame" x="148.5" y="718.5" width="117" height="37"/>
+                                <rect key="frame" x="148.5" y="725.5" width="117" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -145,52 +146,52 @@
                                 <rect key="frame" x="160" y="84" width="94" height="106"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-hz-WwS">
-                                <rect key="frame" x="60" y="268" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="284.5" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Apellido" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cid-yg-ANZ">
-                                <rect key="frame" x="60" y="311.5" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="328" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDH-5o-F58">
-                                <rect key="frame" x="60" y="355" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="371.5" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-r4-yYF">
-                                <rect key="frame" x="60" y="398.5" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="415" width="294" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirma tu contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-gT-keH">
-                                <rect key="frame" x="60" y="442" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="457" width="294" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-Bu-9ap">
-                                <rect key="frame" x="60" y="485.5" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="499" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Código postal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-9W-Pft">
-                                <rect key="frame" x="60" y="529" width="294" height="33.5"/>
+                                <rect key="frame" x="60" y="542.5" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-Uk-Pt7">
-                                <rect key="frame" x="60" y="572.5" width="294" height="33.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-Uk-Pt7">
+                                <rect key="frame" x="60" y="586" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-Za-zvM">
-                                <rect key="frame" x="60" y="616" width="294" height="33.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Teléfono" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-Za-zvM">
+                                <rect key="frame" x="60" y="629.5" width="294" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-W3-AdD">
-                                <rect key="frame" x="59" y="659.5" width="118" height="36.5"/>
+                                <rect key="frame" x="59" y="673" width="124.5" height="40"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="medium">
                                     <attributedString key="attributedTitle">
@@ -205,11 +206,11 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G77-Mp-oVD">
-                                <rect key="frame" x="113.5" y="210" width="187" height="48"/>
+                                <rect key="frame" x="120.5" y="215" width="173" height="49.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Regístrate">
                                         <attributes>
-                                            <font key="NSFont" size="41" name="Nunito-Bold"/>
+                                            <font key="NSFont" size="36" name="Nunito-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -217,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J77-IG-JvL">
-                                <rect key="frame" x="114" y="726" width="186" height="24"/>
+                                <rect key="frame" x="114" y="743" width="186" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="¿Ya estás registrado?">
                                         <attributes>
@@ -229,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sus-kS-I2p">
-                                <rect key="frame" x="149.5" y="755" width="115" height="38"/>
+                                <rect key="frame" x="147.5" y="772" width="119.5" height="41.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -246,7 +247,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVs-Ad-9Pg">
-                                <rect key="frame" x="247.5" y="659.5" width="107.5" height="36.5"/>
+                                <rect key="frame" x="244" y="673" width="111" height="40"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="medium">
                                     <attributedString key="attributedTitle">
@@ -282,7 +283,7 @@
                             <constraint firstItem="t5P-r4-yYF" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="L0f-HY-KxD"/>
                             <constraint firstItem="3kn-hz-WwS" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="Pft-3Q-7Fw"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="ldB-Bu-9ap" secondAttribute="trailing" constant="60" id="RUb-vj-B29"/>
-                            <constraint firstItem="G77-Mp-oVD" firstAttribute="top" secondItem="JrO-ld-mxZ" secondAttribute="bottom" constant="20" id="RWV-jy-qPQ"/>
+                            <constraint firstItem="G77-Mp-oVD" firstAttribute="top" secondItem="JrO-ld-mxZ" secondAttribute="bottom" constant="25" id="RWV-jy-qPQ"/>
                             <constraint firstItem="CpU-W3-AdD" firstAttribute="top" secondItem="lS3-Za-zvM" secondAttribute="bottom" constant="10" id="THU-NH-SuB"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="Cid-yg-ANZ" secondAttribute="trailing" constant="60" id="TnR-y6-dzN"/>
                             <constraint firstItem="Ebp-9W-Pft" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="VtB-gG-wsg"/>
@@ -290,7 +291,7 @@
                             <constraint firstItem="JrO-ld-mxZ" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="160" id="Z96-uf-xSJ"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="eHy-Uk-Pt7" secondAttribute="trailing" constant="60" id="ZTe-Zj-gnd"/>
                             <constraint firstItem="eHy-Uk-Pt7" firstAttribute="top" secondItem="Ebp-9W-Pft" secondAttribute="bottom" constant="10" id="aat-E8-cMz"/>
-                            <constraint firstItem="3kn-hz-WwS" firstAttribute="top" secondItem="G77-Mp-oVD" secondAttribute="bottom" constant="10" id="bO8-ae-Izl"/>
+                            <constraint firstItem="3kn-hz-WwS" firstAttribute="top" secondItem="G77-Mp-oVD" secondAttribute="bottom" constant="20" id="bO8-ae-Izl"/>
                             <constraint firstItem="eDH-5o-F58" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="duj-6Q-vlH"/>
                             <constraint firstItem="qA3-gT-keH" firstAttribute="leading" secondItem="3d1-19-4Df" secondAttribute="leading" constant="60" id="e7L-zL-vSW"/>
                             <constraint firstItem="3d1-19-4Df" firstAttribute="trailing" secondItem="yVs-Ad-9Pg" secondAttribute="trailing" constant="59" id="frd-YJ-R0T"/>

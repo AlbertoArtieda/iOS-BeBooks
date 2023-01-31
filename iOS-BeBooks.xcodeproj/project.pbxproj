@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DC359982989110800D4947B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DC359972989110800D4947B /* Nunito-Bold.ttf */; };
 		0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */; };
 		0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */; };
 		0DCDA1E02987DD6D0021551D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DF2987DD6D0021551D /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DC359972989110800D4947B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		0DCDA1D82987DD6D0021551D /* iOS-BeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-BeBooks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DC35996298910D100D4947B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0DC359972989110800D4947B /* Nunito-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0DCDA1CF2987DD6D0021551D = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 			children = (
 				0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */,
 				0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */,
+				0DC35996298910D100D4947B /* Fonts */,
 			);
 			path = "iOS-BeBooksUITests";
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 			files = (
 				0DCDA1E82987DD6E0021551D /* LaunchScreen.storyboard in Resources */,
 				0DCDA1E52987DD6E0021551D /* Assets.xcassets in Resources */,
+				0DC359982989110800D4947B /* Nunito-Bold.ttf in Resources */,
 				0DCDA1E32987DD6D0021551D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
