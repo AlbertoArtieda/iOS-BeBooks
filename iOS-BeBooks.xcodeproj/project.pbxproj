@@ -17,6 +17,8 @@
 		0DCDA1F32987DD6E0021551D /* iOS_BeBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1F22987DD6E0021551D /* iOS_BeBooksTests.swift */; };
 		0DCDA1FD2987DD6E0021551D /* iOS_BeBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */; };
 		0DCDA1FF2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */; };
+		0DFC42F629924E3F001026DB /* ResgisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC42F529924E3F001026DB /* ResgisterVC.swift */; };
+		0DFC42F9299276FF001026DB /* Checks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC42F8299276FF001026DB /* Checks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0DCDA1F82987DD6E0021551D /* iOS-BeBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-BeBooksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCDA1FC2987DD6E0021551D /* iOS_BeBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksUITests.swift; sourceTree = "<group>"; };
 		0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0DFC42F529924E3F001026DB /* ResgisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResgisterVC.swift; sourceTree = "<group>"; };
+		0DFC42F8299276FF001026DB /* Checks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		0DCDA1CF2987DD6D0021551D = {
 			isa = PBXGroup;
 			children = (
+				0DFC42F8299276FF001026DB /* Checks.swift */,
 				0DCDA1DA2987DD6D0021551D /* iOS-BeBooks */,
 				0DCDA1F12987DD6E0021551D /* iOS-BeBooksTests */,
 				0DC35996298910D100D4947B /* Fonts */,
@@ -110,9 +115,9 @@
 		0DCDA1DA2987DD6D0021551D /* iOS-BeBooks */ = {
 			isa = PBXGroup;
 			children = (
+				0DFC42F729924E48001026DB /* ViewControllers */,
 				0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */,
 				0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */,
-				0DCDA1DF2987DD6D0021551D /* ViewController.swift */,
 				0DCDA1E12987DD6D0021551D /* Main.storyboard */,
 				0DCDA1E42987DD6E0021551D /* Assets.xcassets */,
 				0DCDA1E62987DD6E0021551D /* LaunchScreen.storyboard */,
@@ -136,6 +141,15 @@
 				0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */,
 			);
 			path = "iOS-BeBooksUITests";
+			sourceTree = "<group>";
+		};
+		0DFC42F729924E48001026DB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0DCDA1DF2987DD6D0021551D /* ViewController.swift */,
+				0DFC42F529924E3F001026DB /* ResgisterVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCDA1E02987DD6D0021551D /* ViewController.swift in Sources */,
+				0DFC42F9299276FF001026DB /* Checks.swift in Sources */,
+				0DFC42F629924E3F001026DB /* ResgisterVC.swift in Sources */,
 				0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */,
 				0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */,
 			);

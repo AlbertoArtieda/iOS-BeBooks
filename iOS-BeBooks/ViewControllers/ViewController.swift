@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  iOS-BeBooks
-//
-//  Created by Apps2M on 30/1/23.
-//
 
 import UIKit
 
@@ -37,7 +31,7 @@ class ViewController: UIViewController {
                 else{
                     return
                 }
-        let body: [String: String] = ["user": txtUser.text ?? "", "pass": txtPass.text ?? ""]
+        let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? ""]
                 let finalBody = try? JSONSerialization.data(withJSONObject: body)
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
@@ -50,15 +44,15 @@ class ViewController: UIViewController {
                         print(error)
                         return
                     }
-                    guard let data = data else{
-                        return
-                    }
                     // Si el mensaje que devuelve es correcto accede a la app
-                    if (String(data: data, encoding: .utf8) == "Login succesful"){
-                        DispatchQueue.main.sync{
-                            self.performSegue(withIdentifier: "Entry", sender: sender)
-                        }
+                    if let httpResponse = response as? HTTPURLResponse {
+                        print("statusCode: \(httpResponse.statusCode)")
                         
+                        if httpResponse.statusCode == 201 {
+                            DispatchQueue.main.sync{
+                                self.performSegue(withIdentifier: "Entry", sender: sender)
+                            }
+                        }
                     }
                     else {
                         self.message.isHidden = false
