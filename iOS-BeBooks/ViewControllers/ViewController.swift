@@ -27,38 +27,43 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let url =  URL(string:"https://bebooks.onrender.com/login")
-                else{
-                    return
-                }
+        let url =  URL(string:"https://bebooks.onrender.com/login")
+
         let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? ""]
-                let finalBody = try? JSONSerialization.data(withJSONObject: body)
-                var request = URLRequest(url: url)
-                request.httpMethod = "POST"
-                request.httpBody = finalBody
+        let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        do {
+            request.httpBody = finalBody
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
                 
-                URLSession.shared.dataTask(with: request){
-                    (data, response, error) in
-                    print(response as Any)
-                    if let error = error {
-                        print(error)
-                        return
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            print(response as Any)
+            if let error = error {
+                print(error)
+                return
+            }
+            // Si el mensaje que devuelve es correcto accede a la app
+            if let httpResponse = response as? HTTPURLResponse {
+                print("statusCode: \(httpResponse.statusCode)")
+                            
+                if httpResponse.statusCode == 201 {
+                    DispatchQueue.main.sync{
+                        self.performSegue(withIdentifier: "Entry", sender: nil)
                     }
-                    // Si el mensaje que devuelve es correcto accede a la app
-                    if let httpResponse = response as? HTTPURLResponse {
-                        print("statusCode: \(httpResponse.statusCode)")
+                }
+                else {
+                    self.message.isHidden = false
+                }
+            }
                         
-                        if httpResponse.statusCode == 201 {
-                            DispatchQueue.main.sync{
-                                self.performSegue(withIdentifier: "Entry", sender: sender)
-                            }
-                        }
-                        else {
-                            self.message.isHidden = false
-                        }
-                    }
-                    
-                }.resume()
+        }.resume()
     }
 }
 

@@ -1,7 +1,8 @@
 
 import UIKit
 
-class RegisterVC: UIViewController, UITextFieldDelegate {
+class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtUser: UITextField!
@@ -9,13 +10,21 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtConfirmPass: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtCP: UITextField!
+    @IBOutlet weak var txtProvince: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
     
+    @IBOutlet weak var dropdownTable: UITableView!
+    
+    var dropdownItems = ["Item 1", "Item 2", "Item 3"]
     
     override func viewDidLoad() {
         formatoTextField()
         txtCP.delegate = self
         txtPhone.delegate = self
+        txtProvince.isUserInteractionEnabled = false
+        
+        dropdownTable.delegate = self
+        dropdownTable.dataSource = self
     }
     
     @IBAction func btnContinue_OnClick(_ sender: Any) {
@@ -23,12 +32,50 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
             showAlert()
         }
         else {
-            performSegue(withIdentifier: "Continue", sender: sender)
+            // Registrar usuario en la base de datos e ir a Login
+            let url =  URL(string:"https://bebooks.onrender.com/register")
+
+            let body: [String: Any] = [
+                "nombre_apellidos": txtName.text ?? "",
+                "email": txtEmail.text ?? "",
+                "usuario": txtUser.text ?? "",
+                "password": txtPass.text ?? "",
+                "direccion": txtAddress.text ?? "",
+                "cp": Int(txtCP.text!)!,
+                "telefono": Int(txtPhone.text!)!
+            ]
+            let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            do {
+                request.httpBody = finalBody
+            } catch let error {
+                print("El Error\(error.localizedDescription)")
+                return
+            }
+            
+            URLSession.shared.dataTask(with: request){ data, response, error in
+                print("El Response \(String(describing: response))")
+                // Si el mensaje que devuelve es correcto accede a la app
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("statusCode: \(httpResponse.statusCode)")
+                                
+                    if httpResponse.statusCode == 200 {
+                        DispatchQueue.main.sync{
+                            self.performSegue(withIdentifier: "Continue", sender: sender)
+                        }
+                    }
+                }
+                            
+            }.resume()
         }
     }
     
     func checkNullOrEmpty() -> Bool {
-        var textFields = [txtName, txtEmail, txtUser, txtPass, txtConfirmPass, txtAddress, txtCP, txtPhone]
+        let textFields = [txtName, txtEmail, txtUser, txtPass, txtConfirmPass, txtAddress, txtCP, txtPhone]
         var errors = 0
         for i in textFields {
             i!.layer.borderColor = UIColor.black.cgColor
@@ -74,6 +121,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         txtCP.layer.borderWidth = 0.5
         txtPhone.layer.cornerRadius = 10
         txtPhone.layer.borderWidth = 0.5
+        txtProvince.layer.cornerRadius = 10
+        txtProvince.layer.borderWidth = 0.5
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -94,6 +143,22 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         
         alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {action in}))
         present(alert, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dropdownItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = dropdownItems[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dropdownTable.isHidden = true
+    }
+    @IBAction func showProvinces(_ sender: UIButton) {
+        dropdownTable.isHidden = false
     }
     
     
