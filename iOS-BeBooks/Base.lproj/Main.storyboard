@@ -825,7 +825,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnEntrar_OnClick:" destination="DBY-YR-eua" eventType="touchUpInside" id="Qok-dD-YFi"/>
-                                    <segue destination="UBZ-5s-PBI" kind="presentation" identifier="Entry" modalPresentationStyle="fullScreen" id="dK9-PT-FpK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-Hp-gkC">
@@ -899,6 +898,7 @@
                         <outlet property="message" destination="GBD-KN-mwk" id="ogQ-RG-xFT"/>
                         <outlet property="txtPass" destination="7Rv-uP-GIA" id="82l-ZY-Ge1"/>
                         <outlet property="txtUser" destination="9Nh-Ml-WW6" id="As2-Jx-kAX"/>
+                        <segue destination="UBZ-5s-PBI" kind="presentation" identifier="Entry" modalPresentationStyle="fullScreen" id="gY9-Hp-USd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0i-nl-lGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

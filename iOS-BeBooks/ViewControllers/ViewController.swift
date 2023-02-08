@@ -53,9 +53,9 @@ class ViewController: UIViewController {
                                 self.performSegue(withIdentifier: "Entry", sender: sender)
                             }
                         }
-                    }
-                    else {
-                        self.message.isHidden = false
+                        else {
+                            self.message.isHidden = false
+                        }
                     }
                     
                 }.resume()
