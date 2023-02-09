@@ -2,7 +2,6 @@
 import UIKit
 
 class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtUser: UITextField!
@@ -10,18 +9,17 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
     @IBOutlet weak var txtConfirmPass: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtCP: UITextField!
-    @IBOutlet weak var txtProvince: UITextField!
+    @IBOutlet weak var txtProvince: UIButton!
     @IBOutlet weak var txtPhone: UITextField!
     
     @IBOutlet weak var dropdownTable: UITableView!
     
-    var dropdownItems = ["Item 1", "Item 2", "Item 3"]
-    
+    var dropdownItems: [String] = []
+
     override func viewDidLoad() {
         formatoTextField()
         txtCP.delegate = self
         txtPhone.delegate = self
-        txtProvince.isUserInteractionEnabled = false
         
         dropdownTable.delegate = self
         dropdownTable.dataSource = self
@@ -123,6 +121,10 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         txtPhone.layer.borderWidth = 0.5
         txtProvince.layer.cornerRadius = 10
         txtProvince.layer.borderWidth = 0.5
+        
+        //txtProvince.layer.masksToBounds = true
+        txtProvince.layer.cornerRadius = 10
+        txtProvince.layer.borderWidth = 0.5
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -155,11 +157,29 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        txtProvince.setTitle(dropdownItems[indexPath.row], for: .normal)
         dropdownTable.isHidden = true
     }
-    @IBAction func showProvinces(_ sender: UIButton) {
-        dropdownTable.isHidden = false
-    }
     
+    @IBAction func sshowProvinces(_ sender: UIButton) {
+        let urlSession = URLSession.shared
+        let url =  URL(string: "https://bebooks.onrender.com/getProvincias")
+        
+        urlSession.dataTask(with: url!) { data, response, error  in
+            if let data = data {
+                let json = try? JSONSerialization.jsonObject(with: data)
+                print("El JSON -> \(String(describing: json))")
+                for i in json as! [String]{
+                    print(i)
+                    self.dropdownItems.append(i)
+                }
+                DispatchQueue.main.async {
+                    self.dropdownTable.reloadData()
+                    self.dropdownTable.isHidden = false
+                }
+            }
+            
+        }.resume()
+    }
     
 }
