@@ -39,8 +39,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
                 "usuario": txtUser.text ?? "",
                 "password": txtPass.text ?? "",
                 "direccion": txtAddress.text ?? "",
-                "cp": Int(txtCP.text!)!,
-                "telefono": Int(txtPhone.text!)!
+                "cp": Int(txtCP.text!) ?? 0,
+                "telefono": Int(txtPhone.text!) ?? 0
             ]
             let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
             var request = URLRequest(url: url!)
@@ -81,23 +81,10 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
                 i!.layer.borderColor = UIColor.red.cgColor
                 errors += 1
             }
-            if (i!.hashValue == textFields.count && errors != 0)
+            if (i!.hashValue == textFields.count || errors != 0)
             {
                 return false
             }
-        }
-        if (txtConfirmPass.text != txtPass.text) {
-            txtConfirmPass.layer.borderColor = UIColor.red.cgColor
-            txtPass.layer.borderColor = UIColor.red.cgColor
-            return false
-        }
-        if ((txtCP.text == "" || txtCP.text == nil) || txtCP.text?.count != 5) {
-            txtCP.layer.borderColor = UIColor.red.cgColor
-            return false
-        }
-        if ((txtPhone.text == "" || txtPhone.text == nil) || txtPhone.text?.count != 9) {
-            txtPhone.layer.borderColor = UIColor.red.cgColor
-            return false
         }
         return true
     }
@@ -119,10 +106,6 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         txtCP.layer.borderWidth = 0.5
         txtPhone.layer.cornerRadius = 10
         txtPhone.layer.borderWidth = 0.5
-        txtProvince.layer.cornerRadius = 10
-        txtProvince.layer.borderWidth = 0.5
-        
-        //txtProvince.layer.masksToBounds = true
         txtProvince.layer.cornerRadius = 10
         txtProvince.layer.borderWidth = 0.5
     }
