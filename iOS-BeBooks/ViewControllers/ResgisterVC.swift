@@ -108,6 +108,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
         txtPhone.layer.borderWidth = 0.5
         txtProvince.layer.cornerRadius = 10
         txtProvince.layer.borderWidth = 0.5
+        dropdownTable.layer.borderWidth = 0.5
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
