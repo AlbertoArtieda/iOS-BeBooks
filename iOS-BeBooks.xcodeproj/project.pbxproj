@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01372DFE76EDFE6E5501193C /* Pods_iOS_BeBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE61BFF6BFBA78971A78D541 /* Pods_iOS_BeBooksTests.framework */; };
 		0D875801299A38E1003ACC0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875800299A38E1003ACC0F /* HomeViewController.swift */; };
 		0D875804299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875803299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift */; };
 		0D875806299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */; };
@@ -22,6 +23,8 @@
 		0DCDA1FF2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */; };
 		0DFC42F629924E3F001026DB /* ResgisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC42F529924E3F001026DB /* ResgisterVC.swift */; };
 		0DFC42F9299276FF001026DB /* Checks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC42F8299276FF001026DB /* Checks.swift */; };
+		1A294DB2D9FA3E5529E207E5 /* Pods_iOS_BeBooks_iOS_BeBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB258C87CEDE24A6CD490C1E /* Pods_iOS_BeBooks_iOS_BeBooksUITests.framework */; };
+		275A417E49A3132B77B450FA /* Pods_iOS_BeBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF290A53A9BF6F312D8D41 /* Pods_iOS_BeBooks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,15 @@
 		0DCDA1FE2987DD6E0021551D /* iOS_BeBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BeBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0DFC42F529924E3F001026DB /* ResgisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResgisterVC.swift; sourceTree = "<group>"; };
 		0DFC42F8299276FF001026DB /* Checks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checks.swift; sourceTree = "<group>"; };
+		5FCF290A53A9BF6F312D8D41 /* Pods_iOS_BeBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_BeBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		658571458387DC8E9F9D2343 /* Pods-iOS-BeBooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooksTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooksTests/Pods-iOS-BeBooksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		676C55B49955CC67B1D1CF7C /* Pods-iOS-BeBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooksTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooksTests/Pods-iOS-BeBooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		7ECEE43248C42B345BA7C342 /* Pods-iOS-BeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooks.release.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooks/Pods-iOS-BeBooks.release.xcconfig"; sourceTree = "<group>"; };
+		80E61D4B13212B2103BF5E71 /* Pods-iOS-BeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooks.debug.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooks/Pods-iOS-BeBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		CE61BFF6BFBA78971A78D541 /* Pods_iOS_BeBooksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_BeBooksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC110021C9D576B88DEC1796 /* Pods-iOS-BeBooks-iOS-BeBooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooks-iOS-BeBooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooks-iOS-BeBooksUITests/Pods-iOS-BeBooks-iOS-BeBooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5C7FCF8437F074B733A186C /* Pods-iOS-BeBooks-iOS-BeBooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BeBooks-iOS-BeBooksUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-BeBooks-iOS-BeBooksUITests/Pods-iOS-BeBooks-iOS-BeBooksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB258C87CEDE24A6CD490C1E /* Pods_iOS_BeBooks_iOS_BeBooksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_BeBooks_iOS_BeBooksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275A417E49A3132B77B450FA /* Pods_iOS_BeBooks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01372DFE76EDFE6E5501193C /* Pods_iOS_BeBooksTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A294DB2D9FA3E5529E207E5 /* Pods_iOS_BeBooks_iOS_BeBooksUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +129,8 @@
 				0DC35996298910D100D4947B /* Fonts */,
 				0DCDA1FB2987DD6E0021551D /* iOS-BeBooksUITests */,
 				0DCDA1D92987DD6D0021551D /* Products */,
+				A41F997DFC1A102A9B859384 /* Pods */,
+				79DE9D8E1560D8326DA70661 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +186,30 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		79DE9D8E1560D8326DA70661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FCF290A53A9BF6F312D8D41 /* Pods_iOS_BeBooks.framework */,
+				FB258C87CEDE24A6CD490C1E /* Pods_iOS_BeBooks_iOS_BeBooksUITests.framework */,
+				CE61BFF6BFBA78971A78D541 /* Pods_iOS_BeBooksTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A41F997DFC1A102A9B859384 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80E61D4B13212B2103BF5E71 /* Pods-iOS-BeBooks.debug.xcconfig */,
+				7ECEE43248C42B345BA7C342 /* Pods-iOS-BeBooks.release.xcconfig */,
+				DC110021C9D576B88DEC1796 /* Pods-iOS-BeBooks-iOS-BeBooksUITests.debug.xcconfig */,
+				F5C7FCF8437F074B733A186C /* Pods-iOS-BeBooks-iOS-BeBooksUITests.release.xcconfig */,
+				658571458387DC8E9F9D2343 /* Pods-iOS-BeBooksTests.debug.xcconfig */,
+				676C55B49955CC67B1D1CF7C /* Pods-iOS-BeBooksTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DCDA2022987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooks" */;
 			buildPhases = (
+				74D7AA8AD8A111C1961948C3 /* [CP] Check Pods Manifest.lock */,
 				0DCDA1D42987DD6D0021551D /* Sources */,
 				0DCDA1D52987DD6D0021551D /* Frameworks */,
 				0DCDA1D62987DD6D0021551D /* Resources */,
+				86ABABAADF4C57B00046278C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DCDA2052987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksTests" */;
 			buildPhases = (
+				B3670B982B9592E81D63EA8B /* [CP] Check Pods Manifest.lock */,
 				0DCDA1EA2987DD6E0021551D /* Sources */,
 				0DCDA1EB2987DD6E0021551D /* Frameworks */,
 				0DCDA1EC2987DD6E0021551D /* Resources */,
@@ -211,9 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DCDA2082987DD6E0021551D /* Build configuration list for PBXNativeTarget "iOS-BeBooksUITests" */;
 			buildPhases = (
+				EA6FA2EE0B0280A7C505EA58 /* [CP] Check Pods Manifest.lock */,
 				0DCDA1F42987DD6E0021551D /* Sources */,
 				0DCDA1F52987DD6E0021551D /* Frameworks */,
 				0DCDA1F62987DD6E0021551D /* Resources */,
+				EF425DD6B968F553E77D7ED1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +341,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74D7AA8AD8A111C1961948C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-BeBooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86ABABAADF4C57B00046278C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks/Pods-iOS-BeBooks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks/Pods-iOS-BeBooks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks/Pods-iOS-BeBooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3670B982B9592E81D63EA8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-BeBooksTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA6FA2EE0B0280A7C505EA58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-BeBooks-iOS-BeBooksUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF425DD6B968F553E77D7ED1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks-iOS-BeBooksUITests/Pods-iOS-BeBooks-iOS-BeBooksUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks-iOS-BeBooksUITests/Pods-iOS-BeBooks-iOS-BeBooksUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-BeBooks-iOS-BeBooksUITests/Pods-iOS-BeBooks-iOS-BeBooksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DCDA1D42987DD6D0021551D /* Sources */ = {
@@ -480,6 +629,7 @@
 		};
 		0DCDA2032987DD6E0021551D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E61D4B13212B2103BF5E71 /* Pods-iOS-BeBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -507,6 +657,7 @@
 		};
 		0DCDA2042987DD6E0021551D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ECEE43248C42B345BA7C342 /* Pods-iOS-BeBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -534,6 +685,7 @@
 		};
 		0DCDA2062987DD6E0021551D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 658571458387DC8E9F9D2343 /* Pods-iOS-BeBooksTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +705,7 @@
 		};
 		0DCDA2072987DD6E0021551D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 676C55B49955CC67B1D1CF7C /* Pods-iOS-BeBooksTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +725,7 @@
 		};
 		0DCDA2092987DD6E0021551D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC110021C9D576B88DEC1796 /* Pods-iOS-BeBooks-iOS-BeBooksUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,6 +743,7 @@
 		};
 		0DCDA20A2987DD6E0021551D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5C7FCF8437F074B733A186C /* Pods-iOS-BeBooks-iOS-BeBooksUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,5 +1,6 @@
 
 import UIKit
+import DropDown
 
 class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var txtName: UITextField!
