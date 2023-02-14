@@ -1,43 +1,38 @@
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    // Intercambiar estas imagenes por la consuta a los libros más buscados
-    let bookImages: [String] = ["PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews", "PruebaListViews"]
-    
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    // Intercambiar estas imagenes cuando llegue la hora
     let profileImages: [String] = ["ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", ]
+    let recentlyUploaded: [RecentlyUploadedBookTableViewCell] = []
     
-    @IBOutlet weak var scrollMostSearchedBooks: UICollectionView!
-    @IBOutlet weak var scrollPeopleNearYou: UICollectionView!
+    @IBOutlet weak var scrollNearPeople: UICollectionView!
+    @IBOutlet weak var recentlyUploadedTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollMostSearchedBooks.delegate = self
-        scrollMostSearchedBooks.dataSource = self
     }
+    
+    // Gente cerca de uno
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Tener el control de cada collection view
-        if collectionView == scrollMostSearchedBooks{
-            print("algo 1")
-            return bookImages.count
-        }
-        print("algo 2")
         return profileImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = scrollPeopleNearYou.dequeueReusableCell(withReuseIdentifier: "nearPeople", for: indexPath) as! NearPeopleCollectionViewCell
+        let cell = scrollNearPeople.dequeueReusableCell(withReuseIdentifier: "nearPeople", for: indexPath) as! NearPeopleCollectionViewCell
         
         cell.imgProfile.image = UIImage(named: profileImages[indexPath.row])
-        
-        if collectionView == scrollMostSearchedBooks {
-            print("Entra a SCROLL DE LIBROS")
-            let cell2 = scrollMostSearchedBooks.dequeueReusableCell(withReuseIdentifier: "mostSearched", for: indexPath) as! MostSearchedBooksCollectionViewCell
-            
-            cell2.mostSearchedBook.image = UIImage(named: bookImages[indexPath.row])
-            return cell2
-        }
         return cell
+    }
+    
+    // Libros recientemente subidps
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recentlyUploaded.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = recentlyUploadedTable.dequeueReusableCell(withIdentifier: "recentBook", for: indexPath) as! RecentlyUploadedBookTableViewCell
+        // TODO: asignar a las propiedades de la celda creada (imagen, título y libro) las recibidas por HTTP y devolver la celda
     }
 
 }

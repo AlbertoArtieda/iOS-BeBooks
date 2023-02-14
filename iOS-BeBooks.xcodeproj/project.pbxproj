@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01372DFE76EDFE6E5501193C /* Pods_iOS_BeBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE61BFF6BFBA78971A78D541 /* Pods_iOS_BeBooksTests.framework */; };
+		0D6B678E299B83BC00C2A766 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */; };
+		0D6B6790299B87EB00C2A766 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */; };
+		0D6ECABA299B9DA5007CCAA7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */; };
+		0D6ECABC299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */; };
 		0D875801299A38E1003ACC0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875800299A38E1003ACC0F /* HomeViewController.swift */; };
-		0D875804299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875803299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift */; };
 		0D875806299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */; };
 		0DC359982989110800D4947B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DC359972989110800D4947B /* Nunito-Bold.ttf */; };
 		0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */; };
@@ -45,8 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D875800299A38E1003ACC0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		0D875803299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSearchedBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DC359972989110800D4947B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		0DCDA1D82987DD6D0021551D /* iOS-BeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-BeBooks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +112,9 @@
 		0D875802299A3B96003ACC0F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0D875803299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift */,
 				0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */,
+				0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */,
+				0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -182,6 +189,8 @@
 				0DCDA1DF2987DD6D0021551D /* ViewController.swift */,
 				0DFC42F529924E3F001026DB /* ResgisterVC.swift */,
 				0D875800299A38E1003ACC0F /* HomeViewController.swift */,
+				0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */,
+				0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,7 +215,6 @@
 				658571458387DC8E9F9D2343 /* Pods-iOS-BeBooksTests.debug.xcconfig */,
 				676C55B49955CC67B1D1CF7C /* Pods-iOS-BeBooksTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -450,12 +458,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D875804299A3BC2003ACC0F /* MostSearchedBooksCollectionViewCell.swift in Sources */,
 				0DCDA1E02987DD6D0021551D /* ViewController.swift in Sources */,
 				0DFC42F9299276FF001026DB /* Checks.swift in Sources */,
+				0D6ECABA299B9DA5007CCAA7 /* ProfileViewController.swift in Sources */,
 				0D875806299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift in Sources */,
 				0DFC42F629924E3F001026DB /* ResgisterVC.swift in Sources */,
+				0D6B678E299B83BC00C2A766 /* BookTableViewCell.swift in Sources */,
 				0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */,
+				0D6ECABC299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift in Sources */,
+				0D6B6790299B87EB00C2A766 /* HistoryViewController.swift in Sources */,
 				0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */,
 				0D875801299A38E1003ACC0F /* HomeViewController.swift in Sources */,
 			);
