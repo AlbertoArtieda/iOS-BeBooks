@@ -21,7 +21,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = givenBooks.dequeueReusableCell(withIdentifier: "givenBook", for: indexPath) as! BookTableViewCell
+        let cell = givenBooksTable.dequeueReusableCell(withIdentifier: "givenBook", for: indexPath) as! BookTableViewCell
         // TODO: asignar a las propiedades de la celda creada (imagen, título, libro y fecha) las recibidas por HTTP y devolver la celda
         if tableView == gottenBooksTable {
             let cell2 = gottenBooksTable.dequeueReusableCell(withIdentifier: "gottenBook", for: indexPath) as! BookTableViewCell

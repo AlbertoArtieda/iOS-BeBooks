@@ -3,7 +3,7 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     // Intercambiar estas imagenes cuando llegue la hora
     let profileImages: [String] = ["ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", ]
-    let recentlyUploaded: [RecentlyUploadedBookTableViewCell] = []
+    let recentlyUploaded: [BookTableViewCell] = []
     
     @IBOutlet weak var scrollNearPeople: UICollectionView!
     @IBOutlet weak var recentlyUploadedTable: UITableView!
@@ -31,8 +31,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = recentlyUploadedTable.dequeueReusableCell(withIdentifier: "recentBook", for: indexPath) as! RecentlyUploadedBookTableViewCell
+        let cell = recentlyUploadedTable.dequeueReusableCell(withIdentifier: "recentBook", for: indexPath) as! BookTableViewCell
         // TODO: asignar a las propiedades de la celda creada (imagen, título y libro) las recibidas por HTTP y devolver la celda
+        return cell
     }
 
 }
