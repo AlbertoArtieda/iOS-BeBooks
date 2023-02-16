@@ -117,11 +117,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
             i!.layer.cornerRadius = 10
             i!.layer.borderWidth = 0.5
         }
-        
         dropDown.anchorView = btnProvince
-        
         dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
-        
         dropDown.topOffset = CGPoint(x: 0, y: -(dropDown.anchorView?.plainView.bounds.height)!)
         
         dropDown.direction = .bottom

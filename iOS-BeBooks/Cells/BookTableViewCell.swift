@@ -7,3 +7,5 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var tradeDate: UILabel!
     
 }
+
+
