@@ -12,6 +12,7 @@
 		0D055BC6299E417C00879352 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D055BC5299E417C00879352 /* SearchViewController.swift */; };
 		0D6B678E299B83BC00C2A766 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */; };
 		0D6B6790299B87EB00C2A766 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */; };
+		0D6DE61529A389D2004B88C6 /* BookAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DE61429A389D2004B88C6 /* BookAdditionViewController.swift */; };
 		0D6ECABA299B9DA5007CCAA7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */; };
 		0D6ECABC299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */; };
 		0D875806299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */; };
@@ -53,6 +54,7 @@
 		0D055BC5299E417C00879352 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		0D6DE61429A389D2004B88C6 /* BookAdditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAdditionViewController.swift; sourceTree = "<group>"; };
 		0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				0D6B678F299B87EB00C2A766 /* HistoryViewController.swift */,
 				0D6ECAB9299B9DA5007CCAA7 /* ProfileViewController.swift */,
 				0DCD5E5D299CDAE7007D2F49 /* ProfileEditionViewController.swift */,
+				0D6DE61429A389D2004B88C6 /* BookAdditionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				0D055BC6299E417C00879352 /* SearchViewController.swift in Sources */,
 				0D055BC4299E289A00879352 /* Book.swift in Sources */,
 				0D6B6790299B87EB00C2A766 /* HistoryViewController.swift in Sources */,
+				0D6DE61529A389D2004B88C6 /* BookAdditionViewController.swift in Sources */,
 				0DCDA1DE2987DD6D0021551D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
