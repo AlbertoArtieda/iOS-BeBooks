@@ -1,0 +1,6 @@
+framework module Pods_iOS_BeBooks_iOS_BeBooksUITests {
+  umbrella header "Pods-iOS-BeBooks-iOS-BeBooksUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
