@@ -1,11 +1,12 @@
 
 import UIKit
 
+public var token : String = ""
+
 class ViewController: UIViewController {
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPass: UITextField!
     @IBOutlet weak var message: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         
         let url =  URL(string:"https://bebooks.onrender.com/login")
 
-        let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? ""]
+        let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? "", "token": ""]
         let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -54,6 +55,10 @@ class ViewController: UIViewController {
                 print("statusCode: \(httpResponse.statusCode)")
                             
                 if httpResponse.statusCode == 201 {
+                    guard let data = data else { return }
+                    
+                    token = String(data: data, encoding: .utf8)!
+                    
                     DispatchQueue.main.sync{
                         self.performSegue(withIdentifier: "Entry", sender: nil)
                     }
