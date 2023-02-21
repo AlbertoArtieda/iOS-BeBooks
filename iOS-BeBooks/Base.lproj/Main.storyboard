@@ -37,7 +37,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gii-Ns-UIP">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gii-Ns-UIP">
                                 <rect key="frame" x="99" y="181.5" width="216" height="301"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="301" id="amM-yw-uVj"/>
@@ -62,19 +62,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promenade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iw-CT-1kV">
-                                <rect key="frame" x="238" y="532.5" width="106" height="27.5"/>
+                                <rect key="frame" x="146" y="532.5" width="198" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promenade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkU-M5-lgV">
-                                <rect key="frame" x="238" y="579" width="106" height="27.5"/>
+                                <rect key="frame" x="169" y="579" width="175" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promenade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93a-mh-nt8">
-                                <rect key="frame" x="238" y="624.5" width="106" height="27.5"/>
+                                <rect key="frame" x="144" y="624.5" width="200" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,6 +91,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addBook:" destination="Tr0-xY-CIF" eventType="touchUpInside" id="GXW-ol-jAs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKm-HW-Dal">
                                 <rect key="frame" x="344" y="102" width="50" height="34"/>
@@ -107,14 +110,28 @@
                                     <action selector="fillData:" destination="Tr0-xY-CIF" eventType="touchUpInside" id="GGm-OH-muQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH9-8J-oad">
+                                <rect key="frame" x="100" y="319" width="214" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="l9Q-kG-FA5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Añade una buena foto de tu libro" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addBookPhoto:" destination="Tr0-xY-CIF" eventType="touchUpInside" id="b6M-Oa-re9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EdI-81-MgK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SkU-M5-lgV" firstAttribute="leading" secondItem="AcL-sQ-svs" secondAttribute="trailing" constant="20" id="1Y8-gl-TYM"/>
                             <constraint firstItem="km6-KN-cjX" firstAttribute="top" secondItem="EdI-81-MgK" secondAttribute="top" constant="58.5" id="2Pg-HV-GeG"/>
+                            <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="Z6r-1e-mKS" secondAttribute="trailing" constant="290" id="3rk-Qf-8DL"/>
                             <constraint firstItem="93a-mh-nt8" firstAttribute="top" secondItem="SkU-M5-lgV" secondAttribute="bottom" constant="18" id="66a-C3-cYz"/>
                             <constraint firstItem="aKm-HW-Dal" firstAttribute="top" secondItem="EdI-81-MgK" secondAttribute="top" constant="58" id="70C-ym-JVk"/>
-                            <constraint firstItem="93a-mh-nt8" firstAttribute="leading" secondItem="Z6r-1e-mKS" secondAttribute="trailing" constant="114" id="7KY-gl-Kca"/>
                             <constraint firstItem="AcL-sQ-svs" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="70" id="89O-94-TlL"/>
                             <constraint firstItem="Z6r-1e-mKS" firstAttribute="top" secondItem="AcL-sQ-svs" secondAttribute="bottom" constant="18" id="99M-wE-Cra"/>
                             <constraint firstItem="km6-KN-cjX" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="35" id="9Py-sw-kad"/>
@@ -125,24 +142,31 @@
                             <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="93a-mh-nt8" secondAttribute="trailing" constant="70" id="HV8-Ka-bWk"/>
                             <constraint firstItem="Frz-as-lKa" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="70" id="JDp-9v-AEi"/>
                             <constraint firstItem="AcL-sQ-svs" firstAttribute="top" secondItem="Frz-as-lKa" secondAttribute="bottom" constant="19" id="Owt-k0-Y1k"/>
-                            <constraint firstItem="SkU-M5-lgV" firstAttribute="leading" secondItem="AcL-sQ-svs" secondAttribute="trailing" constant="89" id="aeW-o8-0bz"/>
+                            <constraint firstItem="7iw-CT-1kV" firstAttribute="leading" secondItem="Frz-as-lKa" secondAttribute="trailing" constant="20" id="XpS-Kf-hIG"/>
                             <constraint firstItem="EdI-81-MgK" firstAttribute="bottom" secondItem="CaP-Zb-kJw" secondAttribute="bottom" constant="95" id="bRs-Qg-GUh"/>
                             <constraint firstItem="SkU-M5-lgV" firstAttribute="top" secondItem="7iw-CT-1kV" secondAttribute="bottom" constant="19" id="cpj-dB-P3o"/>
                             <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="CaP-Zb-kJw" secondAttribute="trailing" constant="50" id="e4p-IE-Fo3"/>
+                            <constraint firstItem="YH9-8J-oad" firstAttribute="top" secondItem="km6-KN-cjX" secondAttribute="bottom" constant="182.5" id="gxw-ez-fHm"/>
                             <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="aKm-HW-Dal" secondAttribute="trailing" constant="20" id="gz3-HR-lqU"/>
+                            <constraint firstItem="YH9-8J-oad" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="100" id="h2h-D1-HEv"/>
                             <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="gii-Ns-UIP" secondAttribute="trailing" constant="99" id="hOF-cP-vb8"/>
+                            <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="YH9-8J-oad" secondAttribute="trailing" constant="100" id="hQb-Ro-8yg"/>
                             <constraint firstItem="gii-Ns-UIP" firstAttribute="top" secondItem="aKm-HW-Dal" secondAttribute="bottom" constant="45.5" id="i1c-mA-DWU"/>
                             <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="7iw-CT-1kV" secondAttribute="trailing" constant="70" id="jK9-Sw-5yP"/>
+                            <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="Frz-as-lKa" secondAttribute="trailing" constant="288" id="kMR-ZJ-OIh"/>
+                            <constraint firstItem="93a-mh-nt8" firstAttribute="leading" secondItem="Z6r-1e-mKS" secondAttribute="trailing" constant="20" id="kVn-dM-jr6"/>
                             <constraint firstItem="Z6r-1e-mKS" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="70" id="lbe-Rf-LUt"/>
                             <constraint firstItem="gii-Ns-UIP" firstAttribute="leading" secondItem="EdI-81-MgK" secondAttribute="leading" constant="99" id="pQK-xY-PSN"/>
                             <constraint firstItem="7iw-CT-1kV" firstAttribute="top" secondItem="gii-Ns-UIP" secondAttribute="bottom" constant="50" id="vKl-Sx-PeF"/>
-                            <constraint firstItem="7iw-CT-1kV" firstAttribute="leading" secondItem="Frz-as-lKa" secondAttribute="trailing" constant="112" id="xDe-sS-Uaz"/>
+                            <constraint firstItem="EdI-81-MgK" firstAttribute="trailing" secondItem="AcL-sQ-svs" secondAttribute="trailing" constant="265" id="w7E-89-pqo"/>
+                            <constraint firstItem="7iw-CT-1kV" firstAttribute="top" secondItem="YH9-8J-oad" secondAttribute="bottom" constant="186.5" id="xNb-Mj-xR2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Add" id="7OE-dn-GSf"/>
                     <connections>
                         <outlet property="curso" destination="93a-mh-nt8" id="pRT-PU-kO5"/>
                         <outlet property="editoial" destination="SkU-M5-lgV" id="BXz-r3-TMP"/>
+                        <outlet property="imagen" destination="gii-Ns-UIP" id="GEQ-fc-OKc"/>
                         <outlet property="isbn" destination="km6-KN-cjX" id="8GN-c5-0ng"/>
                         <outlet property="titulo" destination="7iw-CT-1kV" id="R0c-4g-xcc"/>
                     </connections>
@@ -379,13 +403,13 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Libros que pueden interesarte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-4s-2d9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Libros que pueden interesarte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-4s-2d9">
                                 <rect key="frame" x="30" y="284.5" width="279" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kAb-PA-HOS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kAb-PA-HOS">
                                 <rect key="frame" x="0.0" y="332" width="414" height="170"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
@@ -423,20 +447,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Libros subidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2h-z4-4gF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Libros subidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2h-z4-4gF">
                                 <rect key="frame" x="30" y="518" width="135" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qj-r0-xAt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qj-r0-xAt">
                                 <rect key="frame" x="181" y="518" width="27" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3V-R9-5Zh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3V-R9-5Zh">
                                 <rect key="frame" x="30" y="128" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="84U-Ie-LCi"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20M-yf-f0c">
                                 <rect key="frame" x="133" y="146" width="261" height="27.5"/>
@@ -450,11 +477,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hJ-if-Qa4">
-                                <rect key="frame" x="122" y="243" width="170" height="33.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="YlV-UV-i4N"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hJ-if-Qa4">
+                                <rect key="frame" x="30" y="243" width="354" height="33.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
@@ -467,7 +491,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cf2-PJ-QDP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cf2-PJ-QDP">
                                 <rect key="frame" x="0.0" y="560.5" width="414" height="252.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -543,6 +567,7 @@
                             <constraint firstItem="q2h-z4-4gF" firstAttribute="leading" secondItem="fWV-5N-mcH" secondAttribute="leading" constant="30" id="MMe-M8-Ilk"/>
                             <constraint firstItem="R3V-R9-5Zh" firstAttribute="top" secondItem="fWV-5N-mcH" secondAttribute="top" constant="84" id="Mc1-kR-y9L"/>
                             <constraint firstItem="uHD-Ev-0qy" firstAttribute="leading" secondItem="fWV-5N-mcH" secondAttribute="leading" constant="316" id="MkD-2T-O2f"/>
+                            <constraint firstItem="5hJ-if-Qa4" firstAttribute="leading" secondItem="fWV-5N-mcH" secondAttribute="leading" constant="30" id="OK0-Ju-sc5"/>
                             <constraint firstItem="Cf2-PJ-QDP" firstAttribute="bottom" secondItem="fWV-5N-mcH" secondAttribute="bottom" id="OiZ-RB-1UL"/>
                             <constraint firstItem="Cf2-PJ-QDP" firstAttribute="trailing" secondItem="fWV-5N-mcH" secondAttribute="trailing" id="U6C-Bf-lo2"/>
                             <constraint firstItem="G41-KQ-0aR" firstAttribute="top" secondItem="20M-yf-f0c" secondAttribute="bottom" id="W0q-cU-UUN"/>
@@ -577,7 +602,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2jy-Bj-vQz">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2jy-Bj-vQz">
                                 <rect key="frame" x="147" y="124" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="fml-3S-wAw"/>
@@ -616,6 +641,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateData:" destination="Awc-1A-CyC" eventType="touchUpInside" id="1Vj-Lf-YKI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Nuevo nombre de usuario" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smc-aX-o67">
                                 <rect key="frame" x="60" y="358" width="294" height="32"/>
