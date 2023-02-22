@@ -1,5 +1,6 @@
 import UIKit
 
 class NearPeopleCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var nearPerson: UIButton!
+    
 }

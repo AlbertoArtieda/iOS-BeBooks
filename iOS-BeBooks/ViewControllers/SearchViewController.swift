@@ -25,8 +25,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = scrollNearPeople.dequeueReusableCell(withReuseIdentifier: "nearPeople", for: indexPath) as! NearPeopleCollectionViewCell
-        
-        cell.imgProfile.image = UIImage(named: profileImages[indexPath.row])
+        cell.nearPerson.setImage(UIImage(named: profileImages[indexPath.row]), for: .normal)
+        //cell.nearPerson.setImage(UIImage(named: profileImages[indexPath.row]), for: .application)
+        print(cell.nearPerson.image(for: .normal)!)
         return cell
     }
     
