@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DBY-YR-eua">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPP-x4-Jra">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -1154,6 +1154,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnEntrar_OnClick:" destination="DBY-YR-eua" eventType="touchUpInside" id="c2C-MU-FTY"/>
+                                    <action selector="changePhoto:" destination="45H-ga-URW" eventType="touchUpInside" id="5Hr-Op-Dav"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lja-vV-Mni">
@@ -1287,6 +1288,23 @@
             </objects>
             <point key="canvasLocation" x="766.66666666666674" y="83.705357142857139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KEf-e8-7w4">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Pbs-Uv-FJI" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L4e-dB-OH4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UPP-x4-Jra" kind="relationship" relationship="rootViewController" id="zeN-96-nup"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQr-3w-VYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="-694"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PuV-9r-bKG">
             <objects>
@@ -1405,7 +1423,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nfL-ev-PEC">
-                                <rect key="frame" x="0.0" y="499" width="414" height="314"/>
+                                <rect key="frame" x="0.0" y="499" width="414" height="363"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recentBook" id="93G-yN-cUa" customClass="BookTableViewCell" customModule="iOS_BeBooks" customModuleProvider="target">
@@ -1725,6 +1743,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="zeN-96-nup"/>
         <segue reference="h3j-AE-Lyc"/>
     </inferredMetricsTieBreakers>
     <resources>

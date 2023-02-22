@@ -2,7 +2,7 @@
 import UIKit
 import DropDown
 
-class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
+class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtUser: UITextField!
@@ -13,6 +13,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
     @IBOutlet weak var btnProvince: UIButton!
     @IBOutlet weak var txtPhone: UITextField!
     let dropDown = DropDown()
+    var imagenPerfil = ""
     
     var dropdownItems: [String] = []
 
@@ -36,7 +37,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
         else {
             let url =  URL(string:"https://bebooks.onrender.com/register")
 
-            let usuario: [String : Any] = [
+            var usuario: [String : Any] = [
                 "nombre_apellidos" : txtName.text ?? "",
                 "email" : txtEmail.text ?? "",
                 "usuario" : txtUser.text ?? "",
@@ -49,6 +50,11 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
                 "puntos": 0
                 
             ]
+            
+            // Si se añade una imagen de perfil, la añade al JSON
+            if imagenPerfil != "" {
+                usuario["imagenPerfil"] = imagenPerfil
+            }
             
             let finalBody = try? JSONSerialization.data(withJSONObject: usuario, options: .prettyPrinted)
             
@@ -179,5 +185,21 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate {
                 }
             }
         }.resume()
+    }
+    
+    @IBAction func changePhoto(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {return}
+
+        dismiss(animated: true)
+        let imageData = image.jpegData(compressionQuality: 1)
+        // Convert image Data to base64 encoded string
+        let imageBase64String = imageData?.base64EncodedString(options: .lineLength64Characters)
+        imagenPerfil = imageBase64String ?? ""
     }
 }
