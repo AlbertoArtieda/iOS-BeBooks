@@ -7,6 +7,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var editoial: UILabel!
     @IBOutlet weak var curso: UILabel!
     @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var addImageButton: UIButton!
     var dataToFill: [UILabel] = []
     
     override func viewDidLoad() {
@@ -86,23 +87,27 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
         imagen.isHidden = false
+        addImageButton.isHidden = true
         imagen.image = image
         picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addBook(_ sender: UIButton) {
-        if imagen.isHidden == false {
+        // imagen.isHidden == false &&
+        if titulo.text != "" && editoial.text != "" && curso.text != "" {
             print("Adelante")
-            let url =  URL(string:"http://127.0.0.1:8000/getbookinfo")
-            
-            //Get data of existing UIImage
-            
+            let url =  URL(string:"http://127.0.0.1:8000/newbook")
+            let imageData = imagen.image?.jpegData(compressionQuality: 1)
+            // Convert image Data to base64 encodded string
+            let imagenFinal = (imageData?.base64EncodedString(options: .lineLength64Characters))
+            print(ViewController.token)
             let libro: [String: String] = [
                 "isbn": isbn.text!,
-                "imagen": "laimagenaqui",
                 "titulo": titulo.text!,
-                "editorial": editoial.text!,
-                "curso": curso.text!
+                "curso": curso.text!,
+                //"token_usuario": ViewController.token,
+                "imagen_libro": "imagenaqui", // imagenFinal
+                "editorial": editoial.text!
             ]
             
             let finalBody = try? JSONSerialization.data(withJSONObject: libro, options: .prettyPrinted)
@@ -111,15 +116,27 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
             
             request.httpMethod = "POST"
             
+            //request.addValue(ViewController.token, forHTTPHeaderField: "token")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.addValue(ViewController.token, forHTTPHeaderField: "token")
+            request.httpBody = finalBody
             
-            do {
-                request.httpBody = finalBody
-            } catch let error {
-                print("El Error\(error.localizedDescription)")
-                return
-            }
+            
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                DispatchQueue.main.sync{
+                    self.performSegue(withIdentifier: "goToProfile", sender: nil)
+                }
+            }.resume()
+                
+        } else {
+            let alert = UIAlertController(title: "Error en la subida", message: "Se deben completar todos los campos para hacer una subida exitosa (imagen, título, editorial y curso)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {action in}))
+            
+            self.present(alert, animated: true)
         }
     }
 }

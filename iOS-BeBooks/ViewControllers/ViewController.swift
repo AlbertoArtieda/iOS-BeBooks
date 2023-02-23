@@ -1,17 +1,18 @@
 
 import UIKit
 
-public var token : String = ""
-
 class ViewController: UIViewController {
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPass: UITextField!
     @IBOutlet weak var message: UILabel!
+    static var token : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         message.isHidden = true
         formatoTextField()
+        
     }
     
     func formatoTextField() {
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
             return
         }
         
-        let url =  URL(string:"https://bebooks.onrender.com/login")
+        let url =  URL(string:"http://127.0.0.1:8000/login")
 
         let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? "", "token": ""]
         let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
                 if httpResponse.statusCode == 201 {
                     guard let data = data else { return }
                     
-                    token = String(data: data, encoding: .utf8)!
+                    ViewController.token = String(data: data, encoding: .utf8)!
                     
                     DispatchQueue.main.sync{
                         self.performSegue(withIdentifier: "Entry", sender: nil)

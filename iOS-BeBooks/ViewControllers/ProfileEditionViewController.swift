@@ -39,11 +39,6 @@ class ProfileEditionViewController: UIViewController, UIImagePickerControllerDel
         newImg.clipsToBounds = true
         newImg.isHidden = false
         dismiss(animated: true)
-        let imageData = newImg.image?.jpegData(compressionQuality: 1)
-        // Convert image Data to base64 encoded string
-        let imageBase64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(imageBase64String ?? "Could not encode image to Base64")
-        print(imageBase64String!)
     }
     
     @IBAction func updateData(_ sender: UIButton) {
