@@ -467,13 +467,13 @@
                                     <constraint firstAttribute="height" constant="85" id="84U-Ie-LCi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20M-yf-f0c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20M-yf-f0c">
                                 <rect key="frame" x="133" y="134" width="261" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sus puntos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G41-KQ-0aR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntos: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G41-KQ-0aR">
                                 <rect key="frame" x="133" y="161.5" width="261" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -591,6 +591,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Profile" id="yww-Bn-P4W"/>
                     <connections>
+                        <outlet property="image" destination="R3V-R9-5Zh" id="HDK-5K-lL3"/>
+                        <outlet property="name" destination="20M-yf-f0c" id="KMJ-8o-Gek"/>
+                        <outlet property="points" destination="G41-KQ-0aR" id="meT-Ie-vNe"/>
                         <outlet property="recBooksCollection" destination="kAb-PA-HOS" id="pB9-B8-QB3"/>
                         <outlet property="uploadedBooksTable" destination="Cf2-PJ-QDP" id="Ptb-IU-pGS"/>
                     </connections>
@@ -1762,7 +1765,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h3j-AE-Lyc"/>
-        <segue reference="Flu-pV-2mJ"/>
+        <segue reference="97P-7q-60i"/>
         <segue reference="G9T-fI-8Y4"/>
     </inferredMetricsTieBreakers>
     <resources>
