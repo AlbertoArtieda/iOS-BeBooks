@@ -1,110 +1,93 @@
 import UIKit
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var points: UILabel!
     
     @IBOutlet weak var recBooksCollection: UICollectionView!
-    var interestingBooks: [RecommendedBookCollectionViewCell] = []
+    static var recBooks: [UIImage] = []
     
     @IBOutlet weak var uploadedBooksTable: UITableView!
-    var uploadedBooks: [BookTableViewCell] = []
-    
-    var profileData: [Any] = []
-    var personalData: [String: Any] = [:]
-    var recommendedBooks: [[String: Any]] = [[:]]
-    var personalBooks: [[String: Any]] = [[:]]
+    var personalBooks: [Book] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillInterestingBooks()
+        name.text = ViewController.user.nombre_apellidos
+        points.text = "Puntos: " + String(ViewController.user.puntos)
+        
+        let dataDecoded : Data = Data(base64Encoded: ViewController.user.imagen_perfil, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+
+        image.image = decodedimage
+        image.layer.cornerRadius = 40
+        image.clipsToBounds = true
+        
+        fillUploadedBooks()
+        print(ProfileViewController.recBooks.count)
         recBooksCollection.reloadData()
-        print(recommendedBooks)
         // Do any additional setup after loading the view.
     }
     
     // Libros interesantes
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(recommendedBooks)
-        return recommendedBooks.count
+        return ProfileViewController.recBooks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = recBooksCollection.dequeueReusableCell(withReuseIdentifier: "recBook", for: indexPath) as! RecommendedBookCollectionViewCell
 
-        let dataDecoded : Data = Data(base64Encoded: self.recommendedBooks[indexPath.row]["imagen_libro"] as! String, options: .ignoreUnknownCharacters)!
-        let decodedimage = UIImage(data: dataDecoded)
+        cell.recBookImage.setImage(ProfileViewController.recBooks[indexPath.row], for: .normal)
         
-        cell.recBookImage.image = decodedimage
-        // TODO: asignar a las propiedades de la celda creada (imagen del libro) las recibidas por HTTP y devolver la celda
         return cell
     }
     
     // Libros subidos
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return uploadedBooks.count
+        return personalBooks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = uploadedBooksTable.dequeueReusableCell(withIdentifier: "uploadedBook", for: indexPath) as! BookTableViewCell
+        cell.bookTitle.text = personalBooks[indexPath.row].titulo
+        cell.bookISBN.text = personalBooks[indexPath.row].isbn
+        
+        let dataDecoded : Data = Data(base64Encoded: personalBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+        
+        cell.bookImage.image = decodedimage
         // TODO: asignar a las propiedades de la celda creada (imagen, título y libro) las recibidas por HTTP y devolver la celda
 
         
         return cell
     }
     
-    func fillInterestingBooks() {
-        let url =  URL(string:"http://127.0.0.1:8000/personalProfile")
-
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue(ViewController.token, forHTTPHeaderField: "token")
-        print(ViewController.token)
+    func fillUploadedBooks() {
+        guard let url = URL(string: "http://127.0.0.1:8000/personalProfile") else { return }
+        var request = URLRequest(url: url)
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        request.httpMethod = "GET"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(ViewController.token, forHTTPHeaderField: "token")
+        
+        URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             
-            if let data = data {
-                let json = try? JSONSerialization.jsonObject(with: data)
-                for i in json as! [Any] {
-                    self.profileData.append(i)
-                }
-                
-                self.personalData = self.profileData[0] as! [String : Any]
-                
-                
-                
-//                print("1 - \(self.personalData)")
-//                print("2 - \(self.recommendedBooks)")
-//                print("3 - \(self.personalBooks)")
-                
-                let dataDecoded : Data = Data(base64Encoded: self.personalData["imagen_perfil"] as! String, options: .ignoreUnknownCharacters)!
-                let decodedimage = UIImage(data: dataDecoded)
-                //self.recommendedBooks = self.profileData[1] as! [[String : Any]]
-                self.recommendedBooks = self.profileData[1] as! [[String : Any]]
-                self.personalBooks = self.profileData[2] as! [[String : Any]]
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    
-                    self.name.text = self.personalData["nombre_apellidos"] as? String
-                    self.points.text! += (self.personalData["puntos"] as? String)!
-                    self.image.image = decodedimage
-                    self.image.layer.cornerRadius = 40
-                    self.image.clipsToBounds = true
-                    self.recBooksCollection.reloadData()
-                    
-                    self.recommendedBooks = self.profileData[1] as! [[String : Any]]
-                    self.personalBooks = self.profileData[2] as! [[String : Any]]
+            guard let data = data else { return }
 
+            do {
+                let decoder = JSONDecoder()
+                self.personalBooks = try decoder.decode([Book].self, from: data)
+                print(self.personalBooks)
+                DispatchQueue.main.async {
+                    self.uploadedBooksTable.reloadData()
+                    
                 }
-                
+
+            } catch let error {
+                print("Error: ", error)
             }
-            
         }.resume()
-        
     }
 }

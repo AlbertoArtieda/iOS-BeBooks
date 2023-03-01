@@ -6,13 +6,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtPass: UITextField!
     @IBOutlet weak var message: UILabel!
     static var token : String = ""
-    
+    static var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         message.isHidden = true
         formatoTextField()
-        
+        //catchUserInfo()
     }
     
     func formatoTextField() {
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             return
         }
         
-        let url =  URL(string:"http://127.0.0.1:8000/login")
+        let url =  URL(string:"https://bebooks.onrender.com/login")
 
         let body: [String: String] = ["nombre": txtUser.text ?? "", "password": txtPass.text ?? "", "token": ""]
         let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
                     
                     ViewController.token = String(data: data, encoding: .utf8)!
                     
+                    
                     DispatchQueue.main.sync{
                         self.performSegue(withIdentifier: "Entry", sender: nil)
                     }
@@ -71,5 +72,6 @@ class ViewController: UIViewController {
                         
         }.resume()
     }
+    
 }
 
