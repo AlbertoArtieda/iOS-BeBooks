@@ -10,6 +10,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
     
     let profileImages: [String] = ["ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", ]
     var books : [Book] = []
+    var nearPerson: [NearPerson] = []
     static var interestingBooks: [UIImage] = []
     
     @IBOutlet weak var tableViewBooks: UITableView!
@@ -22,25 +23,50 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
         tableViewBooks.dataSource = self
         btnSearch.layer.cornerRadius = 10
         catchUserInfo()
-        
-        
+        getNearPeople()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return profileImages.count
+        return nearPerson.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = scrollNearPeople.dequeueReusableCell(withReuseIdentifier: "nearPeople", for: indexPath) as! NearPeopleCollectionViewCell
-        cell.nearPerson.setImage(UIImage(named: profileImages[indexPath.row]), for: .normal)
-        //cell.nearPerson.setImage(UIImage(named: profileImages[indexPath.row]), for: .application)
+        
+
+        
+        let dataDecoded : Data = Data(base64Encoded: nearPerson[indexPath.row].imagen_perfil, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+        
+        cell.nearPerson.setImage(UIImage(named: "ImgPerfil"), for: .normal)
+        cell.nearPerson.contentMode = .scaleAspectFill
+        cell.nearPerson.layer.cornerRadius = 35
+        cell.nearPerson.clipsToBounds = true
+
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: NSIndexPath) {
+        if collectionView == scrollNearPeople {
+            print("Seleccionado!!!!")
+        }
+        print("Seleccionado!!!!")
+        OtherProfileViewController.name = nearPerson[indexPath.row].nombre_apellidos
+
+        let dataDecoded : Data = Data(base64Encoded: nearPerson[indexPath.row].imagen_perfil, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+
+        OtherProfileViewController.image = decodedimage
+        print("Seleccioado")
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewBooks.dequeueReusableCell(withIdentifier: "recentBook", for: indexPath) as! BookTableViewCell
@@ -86,7 +112,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
         request.httpMethod = "GET"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue(ViewController.token, forHTTPHeaderField: "token")
-        print("El token \(ViewController.token)")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -94,7 +119,35 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
             do {
                 let decoder = JSONDecoder()
                 ViewController.user = try decoder.decode(User.self, from: data)
-                print("El usuario \(String(describing: ViewController.user))")
+
+            } catch let error {
+                print("Error: ", error)
+            }
+        }.resume()
+    }
+    
+    func getNearPeople() {
+        guard let url = URL(string: "http://127.0.0.1:8000/nearUsers") else { return }
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(ViewController.token, forHTTPHeaderField: "token")
+        
+        print("El token : " + ViewController.token)
+        
+        URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
+            
+            guard let data = data else { return }
+
+            do {
+                let decoder = JSONDecoder()
+                self.nearPerson = try decoder.decode([NearPerson].self, from: data)
+                print("Las personas: \(self.nearPerson.count)")
+                DispatchQueue.main.async {
+                    self.scrollNearPeople.reloadData()
+                    
+                }
 
             } catch let error {
                 print("Error: ", error)
@@ -108,8 +161,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
             i?.isHidden = true
         }
         
-        // TODO: fix errors below
-        guard let url = URL(string: "http://127.0.0.1:8000/nearPeople") else { return }
+        // TODO: buscar los libros segun el isbn
+        guard let url = URL(string: "http://127.0.0.1:8000/searchBooks") else { return }
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
@@ -122,10 +175,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
 
             do {
                 let decoder = JSONDecoder()
-                self.personalBooks = try decoder.decode([Book].self, from: data)
-                print(self.personalBooks)
+                self.nearPerson = try decoder.decode([NearPerson].self, from: data)
+                print(self.nearPerson)
                 DispatchQueue.main.async {
-                    self.uploadedBooksTable.reloadData()
+                    self.scrollNearPeople.reloadData()
                     
                 }
 
