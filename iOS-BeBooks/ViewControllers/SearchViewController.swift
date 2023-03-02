@@ -1,17 +1,15 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UICollectionViewDataSource {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
    
     @IBOutlet weak var peopleNearYou: UILabel!
     @IBOutlet weak var pnyCollection: UICollectionView!
     @IBOutlet weak var recentlyUploaded: UILabel!
     @IBOutlet weak var ruTable: UITableView!
     
-    let profileImages: [String] = ["ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", "ImgPerfil", ]
     var books : [Book] = []
     var nearPerson: [NearPerson] = []
-    static var interestingBooks: [UIImage] = []
     
     @IBOutlet weak var tableViewBooks: UITableView!
     @IBOutlet weak var scrollNearPeople: UICollectionView!
@@ -39,15 +37,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
         let dataDecoded : Data = Data(base64Encoded: nearPerson[indexPath.row].imagen_perfil, options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
         
-        cell.nearPerson.setImage(UIImage(named: "ImgPerfil"), for: .normal)
+        cell.nearPerson.image = decodedimage
         cell.nearPerson.contentMode = .scaleAspectFill
-        cell.nearPerson.layer.cornerRadius = 35
+        cell.nearPerson.layer.cornerRadius = 40
         cell.nearPerson.clipsToBounds = true
 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == scrollNearPeople {
             print("Seleccionado!!!!")
         }
@@ -58,7 +56,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
         let decodedimage = UIImage(data: dataDecoded)
 
         OtherProfileViewController.image = decodedimage
+        OtherProfileViewController.userID = nearPerson[indexPath.row].ID_usuario
         print("Seleccioado")
+        
+        self.performSegue(withIdentifier: "seeProfile", sender: nil)
         
     }
     
@@ -84,9 +85,23 @@ class SearchViewController: UIViewController, UITableViewDataSource, UICollectio
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dataDecoded : Data = Data(base64Encoded: books[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+        
+        BookManagingViewController.image = decodedimage
+        BookManagingViewController.name = books[indexPath.row].titulo
+        BookManagingViewController.isbn = books[indexPath.row].isbn
+        
+        BookManagingViewController.ownerID = books[indexPath.row].user_id
+        
+        print("Hsciendo segue")
+        self.performSegue(withIdentifier: "seeBook", sender: nil)
+    }
+    
     func BooksApi() {
         
-        guard let url = URL(string: "https://bebooks.onrender.com/searchBooks") else { return }
+        guard let url = URL(string: "http://127.0.0.1:8000/searchBooks") else { return }
         
         URLSession.shared.dataTask(with: url) { [self] (data, response, error) in
             

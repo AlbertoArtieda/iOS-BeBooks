@@ -755,14 +755,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Dx-wZ-TI7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Dx-wZ-TI7">
                                 <rect key="frame" x="57" y="173" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="WC1-Lm-fQ9"/>
                                     <constraint firstAttribute="height" constant="300" id="YnL-Gv-8Lf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aquí el nombre del perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-Dc-axm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aquí el nombre del perfil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-Dc-axm">
                                 <rect key="frame" x="62" y="523" width="291" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -830,6 +830,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TYi-H9-EpL" id="fCX-dg-Wff"/>
+                                    <outlet property="delegate" destination="TYi-H9-EpL" id="Xwq-2c-xZW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pD7-xK-g4s"/>
@@ -853,16 +857,17 @@
                     <connections>
                         <outlet property="profileImage" destination="8Dx-wZ-TI7" id="5qf-M4-ShD"/>
                         <outlet property="profileName" destination="LLn-Dc-axm" id="fZn-Gp-PJp"/>
+                        <outlet property="uploadedBooksTable" destination="seL-kh-dU1" id="n9H-ip-Gle"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvC-lP-hxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="767" y="763"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Managing View Controller-->
         <scene sceneID="YuL-Ot-LTn">
             <objects>
-                <viewController id="WR7-xf-haE" sceneMemberID="viewController">
+                <viewController id="WR7-xf-haE" customClass="BookManagingViewController" customModule="iOS_BeBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pIC-Nm-NlE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -875,38 +880,38 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aquí el nombre del libro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qop-6Z-hqN">
-                                <rect key="frame" x="66" y="496" width="282" height="29.5"/>
+                                <rect key="frame" x="66" y="496" width="282" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2J-Mn-Vf2">
-                                <rect key="frame" x="60" y="533.5" width="294" height="29.5"/>
+                                <rect key="frame" x="60" y="538.5" width="294" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                 <color key="textColor" red="0.46266777889282396" green="0.48556575149282749" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-g4-akW">
-                                <rect key="frame" x="66" y="593" width="39" height="29.5"/>
+                                <rect key="frame" x="66" y="603" width="39" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-Wv-Zoa">
-                                <rect key="frame" x="66" y="652.5" width="70" height="70"/>
+                                <rect key="frame" x="66" y="667.5" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4Tf-fR-zuI"/>
                                     <constraint firstAttribute="width" constant="70" id="9An-5B-gGg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del propietario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0r-Q2-iWI">
-                                <rect key="frame" x="157" y="679" width="217" height="23.5"/>
+                                <rect key="frame" x="157" y="689" width="217" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDt-ME-HPV">
-                                <rect key="frame" x="40" y="759.5" width="154" height="62.5"/>
+                                <rect key="frame" x="40" y="774.5" width="154" height="47.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
@@ -921,7 +926,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wln-m0-q94">
-                                <rect key="frame" x="220" y="759.5" width="154" height="62.5"/>
+                                <rect key="frame" x="220" y="773.5" width="154" height="48.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
@@ -969,6 +974,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V5y-12-X3b"/>
+                    <connections>
+                        <outlet property="bookISBN" destination="B2J-Mn-Vf2" id="sOL-sc-c4v"/>
+                        <outlet property="bookImage" destination="C9N-H3-NYV" id="mhf-b2-aJS"/>
+                        <outlet property="bookName" destination="Qop-6Z-hqN" id="pHu-7I-C0G"/>
+                        <outlet property="ownerImage" destination="C0y-Wv-Zoa" id="hrg-WT-BkH"/>
+                        <outlet property="ownerName" destination="F0r-Q2-iWI" id="34g-oh-EVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMx-Ac-Gei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1409,25 +1421,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWY-fC-SVi">
+                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Hx-YM-EM5">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
-                                                    <color key="tintColor" systemColor="tintColor"/>
-                                                    <state key="normal" image="ImgPerfil"/>
-                                                    <connections>
-                                                        <segue destination="TYi-H9-EpL" kind="show" id="Flu-pV-2mJ"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="UWY-fC-SVi" secondAttribute="bottom" id="0Ad-9D-TqU"/>
-                                                <constraint firstItem="UWY-fC-SVi" firstAttribute="top" secondItem="Fun-nQ-OQD" secondAttribute="top" id="Nxu-uG-xu9"/>
-                                                <constraint firstItem="UWY-fC-SVi" firstAttribute="leading" secondItem="Fun-nQ-OQD" secondAttribute="leading" id="pMl-q0-fAc"/>
-                                                <constraint firstAttribute="trailing" secondItem="UWY-fC-SVi" secondAttribute="trailing" id="vp6-pK-13f"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Hx-YM-EM5" secondAttribute="trailing" id="ES5-pg-lNZ"/>
+                                                <constraint firstItem="5Hx-YM-EM5" firstAttribute="top" secondItem="Fun-nQ-OQD" secondAttribute="top" id="oVz-yd-63W"/>
+                                                <constraint firstItem="5Hx-YM-EM5" firstAttribute="leading" secondItem="Fun-nQ-OQD" secondAttribute="leading" id="weM-HL-LYC"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Hx-YM-EM5" secondAttribute="bottom" id="x10-3I-DX3"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="70" height="80"/>
                                         <connections>
-                                            <outlet property="nearPerson" destination="UWY-fC-SVi" id="dvT-Qg-z0g"/>
+                                            <outlet property="nearPerson" destination="5Hx-YM-EM5" id="wKf-83-UD4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1489,10 +1496,13 @@
                                             <outlet property="bookImage" destination="L4l-ea-RBM" id="J86-Pz-cRi"/>
                                             <outlet property="bookTitle" destination="wVC-UF-bLx" id="tVj-rM-8pK"/>
                                             <outlet property="tradeDate" destination="XhW-fM-Qz7" id="3Nl-2j-Qx1"/>
-                                            <segue destination="WR7-xf-haE" kind="show" id="uws-NK-VT6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UPP-x4-Jra" id="JEM-Jl-fmN"/>
+                                    <outlet property="delegate" destination="UPP-x4-Jra" id="V5s-Ro-HoE"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtF-IJ-1b7">
                                 <rect key="frame" x="345" y="268" width="49" height="31"/>
@@ -1540,6 +1550,8 @@
                         <outlet property="ruTable" destination="nfL-ev-PEC" id="FYA-UP-Xb6"/>
                         <outlet property="scrollNearPeople" destination="khk-cM-dht" id="y5R-7O-gia"/>
                         <outlet property="tableViewBooks" destination="nfL-ev-PEC" id="wg7-f8-VAk"/>
+                        <segue destination="TYi-H9-EpL" kind="show" identifier="seeProfile" id="6z7-M1-dID"/>
+                        <segue destination="WR7-xf-haE" kind="show" identifier="seeBook" id="5Ug-Xr-Snb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyu-HU-GvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1763,14 +1775,13 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="h3j-AE-Lyc"/>
-        <segue reference="Flu-pV-2mJ"/>
+        <segue reference="6z7-M1-dID"/>
         <segue reference="G9T-fI-8Y4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add" width="28" height="34"/>
         <image name="BeBooksLogo" width="120" height="106"/>
         <image name="Book" width="39" height="34"/>
-        <image name="ImgPerfil" width="538" height="538"/>
         <image name="Profile" width="27" height="34"/>
         <image name="Search" width="38" height="34"/>
         <image name="image 16" width="140" height="140"/>

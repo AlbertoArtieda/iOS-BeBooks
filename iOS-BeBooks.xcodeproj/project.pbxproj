@@ -18,6 +18,7 @@
 		0D6ECABC299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */; };
 		0D79552429B098AF0020AE61 /* NearPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79552329B098AF0020AE61 /* NearPerson.swift */; };
 		0D79552629B0AD120020AE61 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79552529B0AD120020AE61 /* OtherProfileViewController.swift */; };
+		0D79552829B0BEB20020AE61 /* BookManagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79552729B0BEB20020AE61 /* BookManagingViewController.swift */; };
 		0D875806299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */; };
 		0D8E064129AF74BB006CECDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E064029AF74BB006CECDE /* User.swift */; };
 		0DC359982989110800D4947B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DC359972989110800D4947B /* Nunito-Bold.ttf */; };
@@ -64,6 +65,7 @@
 		0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D79552329B098AF0020AE61 /* NearPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPerson.swift; sourceTree = "<group>"; };
 		0D79552529B0AD120020AE61 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
+		0D79552729B0BEB20020AE61 /* BookManagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManagingViewController.swift; sourceTree = "<group>"; };
 		0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0D8E064029AF74BB006CECDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0DC359972989110800D4947B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				0DCD5E5D299CDAE7007D2F49 /* ProfileEditionViewController.swift */,
 				0D6DE61429A389D2004B88C6 /* BookAdditionViewController.swift */,
 				0D79552529B0AD120020AE61 /* OtherProfileViewController.swift */,
+				0D79552729B0BEB20020AE61 /* BookManagingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				0D6B678E299B83BC00C2A766 /* BookTableViewCell.swift in Sources */,
 				0DCDA1DC2987DD6D0021551D /* AppDelegate.swift in Sources */,
 				0D79552429B098AF0020AE61 /* NearPerson.swift in Sources */,
+				0D79552829B0BEB20020AE61 /* BookManagingViewController.swift in Sources */,
 				0D8E064129AF74BB006CECDE /* User.swift in Sources */,
 				0D6ECABC299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift in Sources */,
 				0D055BC6299E417C00879352 /* SearchViewController.swift in Sources */,
