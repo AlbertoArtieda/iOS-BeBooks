@@ -137,14 +137,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0D875802299A3B96003ACC0F /* Cells */ = {
+		0D875802299A3B96003ACC0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0D875805299A4F8B003ACC0F /* NearPeopleCollectionViewCell.swift */,
 				0D6B678D299B83BC00C2A766 /* BookTableViewCell.swift */,
 				0D6ECABB299B9E74007CCAA7 /* RecommendedBookCollectionViewCell.swift */,
 			);
-			path = Cells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0DC35996298910D100D4947B /* Fonts */ = {
@@ -182,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				0D055BC2299E284700879352 /* Models */,
-				0D875802299A3B96003ACC0F /* Cells */,
-				0DFC42F729924E48001026DB /* ViewControllers */,
+				0D875802299A3B96003ACC0F /* Views */,
+				0DFC42F729924E48001026DB /* Controllers */,
 				0DCDA1DB2987DD6D0021551D /* AppDelegate.swift */,
 				0DCDA1DD2987DD6D0021551D /* SceneDelegate.swift */,
 				0DCDA1E12987DD6D0021551D /* Main.storyboard */,
@@ -211,7 +211,7 @@
 			path = "iOS-BeBooksUITests";
 			sourceTree = "<group>";
 		};
-		0DFC42F729924E48001026DB /* ViewControllers */ = {
+		0DFC42F729924E48001026DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				0DCDA1DF2987DD6D0021551D /* ViewController.swift */,
@@ -224,7 +224,7 @@
 				0D79552529B0AD120020AE61 /* OtherProfileViewController.swift */,
 				0D79552729B0BEB20020AE61 /* BookManagingViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		79DE9D8E1560D8326DA70661 /* Frameworks */ = {

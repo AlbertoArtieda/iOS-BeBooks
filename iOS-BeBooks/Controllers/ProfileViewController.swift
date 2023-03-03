@@ -25,7 +25,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         image.clipsToBounds = true
         
         fillUploadedBooks()
-        print(ProfileViewController.recBooks.count)
+        ProfileViewController.recBooks.removeAll()
+        for i in SearchViewController.books {
+            let dataDecoded : Data = Data(base64Encoded: i.imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+            let decodedimage = UIImage(data: dataDecoded)
+            
+            ProfileViewController.recBooks.append(decodedimage ?? UIImage())
+        }
+        
         recBooksCollection.reloadData()
         // Do any additional setup after loading the view.
     }

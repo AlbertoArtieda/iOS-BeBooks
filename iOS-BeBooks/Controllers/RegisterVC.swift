@@ -53,7 +53,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UI
             
             // Si se añade una imagen de perfil, la añade al JSON
             if imagenPerfil != "" {
-                usuario["imagenPerfil"] = imagenPerfil
+                usuario["imagen_perfil"] = imagenPerfil
             }
             
             let finalBody = try? JSONSerialization.data(withJSONObject: usuario, options: .prettyPrinted)

@@ -60,7 +60,6 @@ class ViewController: UIViewController {
                     
                     ViewController.token = String(data: data, encoding: .utf8)!
                     
-                    
                     DispatchQueue.main.sync{
                         self.performSegue(withIdentifier: "Entry", sender: nil)
                     }

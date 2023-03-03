@@ -112,7 +112,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
             URLSession.shared.dataTask(with: request) { data, response, error in
                 
                 DispatchQueue.main.sync{
-                    self.performSegue(withIdentifier: "goToProfile", sender: nil)
+                    self.tabBarController?.selectedIndex = 3
                 }
             }.resume()
                 
