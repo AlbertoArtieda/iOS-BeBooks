@@ -21,7 +21,7 @@ class BookManagingViewController: UIViewController {
         bookImage.image = BookManagingViewController.image
         bookName.text = BookManagingViewController.name
         bookISBN.text = BookManagingViewController.isbn
-        
+        getOwner()
         // Do any additional setup after loading the view.
     }
     
@@ -39,15 +39,15 @@ class BookManagingViewController: UIViewController {
             if let data = data {
                 let json = try? JSONSerialization.jsonObject(with: data)
                 
-                var dataToFill: [String] = []
-                for i in json as! [String] {
-                    dataToFill.append(i)
-                }
+                var personalData: [String: String] = [:]
+                personalData = json as! [String:String]
+                print("Los datos personales: \(personalData)")
                 
                 DispatchQueue.main.async {
-                    self.ownerName.text = dataToFill[0]
                     
-                    let dataDecoded : Data = Data(base64Encoded: dataToFill[1], options: .ignoreUnknownCharacters) ?? Data()
+                    self.ownerName.text = personalData["nombre_apellidos"]
+                    
+                    let dataDecoded : Data = Data(base64Encoded: personalData["imagen_perfil"]!, options: .ignoreUnknownCharacters) ?? Data()
                     let decodedimage = UIImage(data: dataDecoded)
                     self.ownerImage.image = decodedimage
                 }

@@ -93,7 +93,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         BookManagingViewController.name = books[indexPath.row].titulo
         BookManagingViewController.isbn = books[indexPath.row].isbn
         
-        BookManagingViewController.ownerID = books[indexPath.row].user_id
+        BookManagingViewController.ownerID = books[indexPath.row].ID_usuario
+        print("La ID: " + String(BookManagingViewController.ownerID))
         
         print("Hsciendo segue")
         self.performSegue(withIdentifier: "seeBook", sender: nil)

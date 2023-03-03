@@ -10,7 +10,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     static var recBooks: [UIImage] = []
     
     @IBOutlet weak var uploadedBooksTable: UITableView!
-    var personalBooks: [Book] = []
+    var personalBooks: [PersonalBook] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let decodedimage = UIImage(data: dataDecoded)
         
         cell.bookImage.image = decodedimage
-        // TODO: asignar a las propiedades de la celda creada (imagen, título y libro) las recibidas por HTTP y devolver la celda
 
         
         return cell
@@ -78,8 +77,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             do {
                 let decoder = JSONDecoder()
-                self.personalBooks = try decoder.decode([Book].self, from: data)
-                print(self.personalBooks)
+                self.personalBooks = try decoder.decode([PersonalBook].self, from: data)
                 DispatchQueue.main.async {
                     self.uploadedBooksTable.reloadData()
                     

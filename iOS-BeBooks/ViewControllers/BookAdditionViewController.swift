@@ -18,14 +18,8 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func fillData(_ sender: UIButton) {
-        // 9788467587142 http://127.0.0.1:8000
+        // 9788468087634 http://127.0.0.1:8000
         let url =  URL(string:"http://127.0.0.1:8000/getbookinfo")
-
-        let isbn: [String: String] = [
-            "isbn": isbn.text!
-        ]
-        
-        let finalBody = try? JSONSerialization.data(withJSONObject: isbn, options: .prettyPrinted)
         
         var request = URLRequest(url: url!)
         
@@ -33,13 +27,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        do {
-            request.httpBody = finalBody
-        } catch let error {
-            print("El Error\(error.localizedDescription)")
-            return
-        }
+        request.setValue(isbn.text, forHTTPHeaderField: "isbn")
         
         URLSession.shared.dataTask(with: request){ data, response, error in
             
@@ -78,7 +66,6 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func addBookPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
@@ -93,20 +80,19 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func addBook(_ sender: UIButton) {
-        // imagen.isHidden == false &&
-        if titulo.text != "" && editoial.text != "" && curso.text != "" {
+        
+        if imagen.isHidden == false && titulo.text != "" {
             print("Adelante")
             let url =  URL(string:"http://127.0.0.1:8000/newbook")
             let imageData = imagen.image?.jpegData(compressionQuality: 1)
             // Convert image Data to base64 encodded string
-            let imagenFinal = (imageData?.base64EncodedString(options: .lineLength64Characters))
+            let imagenFinal = (imageData?.base64EncodedString(options: .lineLength64Characters)) ?? ""
             print(ViewController.token)
             let libro: [String: String] = [
                 "isbn": isbn.text!,
                 "titulo": titulo.text!,
                 "curso": curso.text!,
-                //"token_usuario": ViewController.token,
-                "imagen_libro": "imagenaqui", // imagenFinal
+                "imagen_libro": imagenFinal,
                 "editorial": editoial.text!
             ]
             
@@ -116,7 +102,6 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
             
             request.httpMethod = "POST"
             
-            //request.addValue(ViewController.token, forHTTPHeaderField: "token")
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.addValue(ViewController.token, forHTTPHeaderField: "token")

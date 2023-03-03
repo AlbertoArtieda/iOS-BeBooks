@@ -1,8 +1,6 @@
 
 import Foundation
-
-struct Book : Codable {
-    let ID_usuario: Int
+struct PersonalBook : Codable {
     let titulo : String
     let isbn : String
     let imagen_libro : String
