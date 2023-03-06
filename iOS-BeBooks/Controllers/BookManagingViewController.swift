@@ -8,6 +8,7 @@ class BookManagingViewController: UIViewController {
     
     @IBOutlet weak var ownerImage: UIImageView!
     @IBOutlet weak var ownerName: UILabel!
+    static var fromBook: Bool!
     
     static var ownerID: Int!
     static var ownName: String!
@@ -21,8 +22,19 @@ class BookManagingViewController: UIViewController {
         bookImage.image = BookManagingViewController.image
         bookName.text = BookManagingViewController.name
         bookISBN.text = BookManagingViewController.isbn
-        getOwner()
+        
+        if !OtherProfileViewController.fromOtherProfile {
+            getOwner()
+        }
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if OtherProfileViewController.fromOtherProfile {
+            ownerName.text = BookManagingViewController.ownName
+            ownerImage.image = BookManagingViewController.ownImage
+        }
+        
     }
     
     // TODO: getowner
@@ -53,5 +65,11 @@ class BookManagingViewController: UIViewController {
                 }
             }
         }.resume()
+    }
+    @IBAction func seeOwner(_ sender: UIButton) {
+        BookManagingViewController.fromBook = true
+        OtherProfileViewController.image = ownerImage.image
+        OtherProfileViewController.name = ownerName.text
+        self.performSegue(withIdentifier: "goOwner", sender: nil)
     }
 }

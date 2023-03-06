@@ -40,10 +40,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.tradeDate.text = givenBooks[indexPath.row].fecha
         
-        //        cell.bookImage.image. = givenBooks[indexPath.row].imagen
-        
-        
-        
+        let dataDecoded : Data = Data(base64Encoded: givenBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+        cell.bookImage.image = decodedimage
+
         if tableView == gottenBooksTable {
             
             let cell2 = gottenBooksTable.dequeueReusableCell(withIdentifier: "gottenBook", for: indexPath) as! BookTableViewCell
@@ -53,6 +53,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell2.bookISBN.text = gottenBooks[indexPath.row].isbn
             
             cell2.tradeDate.text = gottenBooks[indexPath.row].fecha
+            
+            let dataDecoded : Data = Data(base64Encoded: gottenBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+            let decodedimage = UIImage(data: dataDecoded)
+            cell2.bookImage.image = decodedimage
             
             return cell2
             

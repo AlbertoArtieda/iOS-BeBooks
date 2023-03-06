@@ -20,6 +20,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         BooksApi()
         catchUserInfo()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        OtherProfileViewController.fromOtherProfile = false
+        BookManagingViewController.fromBook = false
+
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nearPerson.count
@@ -83,6 +88,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        OtherProfileViewController.fromOtherProfile = false
         let dataDecoded : Data = Data(base64Encoded: SearchViewController.books[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
         
@@ -90,7 +96,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         BookManagingViewController.name = SearchViewController.books[indexPath.row].titulo
         BookManagingViewController.isbn = SearchViewController.books[indexPath.row].isbn
         
+        
+        
         BookManagingViewController.ownerID = SearchViewController.books[indexPath.row].ID_usuario
+        OtherProfileViewController.userID = BookManagingViewController.ownerID
         print("La ID: " + String(BookManagingViewController.ownerID))
         
         print("Hsciendo segue")

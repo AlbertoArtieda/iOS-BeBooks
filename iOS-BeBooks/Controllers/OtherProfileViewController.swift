@@ -12,11 +12,15 @@ class OtherProfileViewController: UIViewController, UITableViewDelegate, UITable
     static var name: String!
     
     var userBooks: [Book] = []
+    static var fromOtherProfile: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImage.image = OtherProfileViewController.image
         profileName.text = OtherProfileViewController.name
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         loadUserBooks()
     }
     
@@ -45,6 +49,12 @@ class OtherProfileViewController: UIViewController, UITableViewDelegate, UITable
         BookManagingViewController.image = decodedimage
         BookManagingViewController.name = userBooks[indexPath.row].titulo
         BookManagingViewController.isbn = userBooks[indexPath.row].isbn
+        
+        BookManagingViewController.ownName = profileName.text
+        BookManagingViewController.ownImage = profileImage.image
+        
+        OtherProfileViewController.fromOtherProfile = true
+        self.performSegue(withIdentifier: "seeOtherProfileBook", sender: nil)
     }
     
     func loadUserBooks() {
