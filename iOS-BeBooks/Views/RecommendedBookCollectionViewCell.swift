@@ -8,6 +8,6 @@
 import UIKit
 
 class RecommendedBookCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var recBookImage: UIButton!
+    @IBOutlet weak var recBookImage: UIImageView!
     
 }

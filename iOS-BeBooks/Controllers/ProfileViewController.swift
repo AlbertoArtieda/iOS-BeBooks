@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var uploadedBooksTable: UITableView!
     var personalBooks: [PersonalBook] = []
+    @IBOutlet weak var booksLength: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let cell = recBooksCollection.dequeueReusableCell(withReuseIdentifier: "recBook", for: indexPath) as! RecommendedBookCollectionViewCell
 
-        cell.recBookImage.setImage(ProfileViewController.recBooks[indexPath.row], for: .normal)
+        cell.recBookImage.image = ProfileViewController.recBooks[indexPath.row]
         
         return cell
     }
@@ -87,7 +88,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.personalBooks = try decoder.decode([PersonalBook].self, from: data)
                 DispatchQueue.main.async {
                     self.uploadedBooksTable.reloadData()
-                    
+                    self.booksLength.text = "(" + String(self.personalBooks.count) + ")"
                 }
 
             } catch let error {

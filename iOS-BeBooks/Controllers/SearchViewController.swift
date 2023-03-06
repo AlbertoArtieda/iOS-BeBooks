@@ -19,7 +19,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         getNearPeople()
         BooksApi()
         catchUserInfo()
-        isbnSearchBar.delegate = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

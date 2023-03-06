@@ -38,6 +38,15 @@ class OtherProfileViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dataDecoded : Data = Data(base64Encoded: userBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let decodedimage = UIImage(data: dataDecoded)
+        
+        BookManagingViewController.image = decodedimage
+        BookManagingViewController.name = userBooks[indexPath.row].titulo
+        BookManagingViewController.isbn = userBooks[indexPath.row].isbn
+    }
+    
     func loadUserBooks() {
         guard let url = URL(string: "http://127.0.0.1:8000/seeProfile") else { return }
         var request = URLRequest(url: url)
