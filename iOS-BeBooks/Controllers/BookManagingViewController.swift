@@ -72,4 +72,10 @@ class BookManagingViewController: UIViewController {
         OtherProfileViewController.name = ownerName.text
         self.performSegue(withIdentifier: "goOwner", sender: nil)
     }
+    
+    @IBAction func confirmData(_ sender: UIButton) {
+        
+        
+        self.performSegue(withIdentifier: "confirmData", sender: nil)
+    }
 }

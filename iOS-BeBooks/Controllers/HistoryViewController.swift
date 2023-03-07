@@ -1,12 +1,17 @@
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var givenBooksSearchBar: UISearchBar!
+    @IBOutlet weak var gottenBooksSearchBar: UISearchBar!
     @IBOutlet weak var givenBooksTable: UITableView!
     @IBOutlet weak var gottenBooksTable: UITableView!
     var givenBooks: [ChangedBook] = []
     var gottenBooks: [ChangedBook] = []
     var prueba: [[String: Any]] = [[:]]
+    
+    var filterGivenBooks = [ChangedBook]()
+    var filterGottenBooks = [ChangedBook]()
 
     override func viewDidLoad() {
         givenBooksApi()
@@ -19,28 +24,20 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == gottenBooksTable {
-            
-            return gottenBooks.count
-            
+            return filterGottenBooks.count
         }
-        
-        return givenBooks.count
-        
+        return filterGivenBooks.count
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = givenBooksTable.dequeueReusableCell(withIdentifier: "givenBook", for: indexPath) as! BookTableViewCell
         
-        cell.bookTitle.text = givenBooks[indexPath.row].titulo
+        cell.bookTitle.text = filterGivenBooks[indexPath.row].titulo
+        cell.bookISBN.text = filterGivenBooks[indexPath.row].isbn
+        cell.tradeDate.text = filterGivenBooks[indexPath.row].fecha
         
-        cell.bookISBN.text = givenBooks[indexPath.row].isbn
-        
-        cell.tradeDate.text = givenBooks[indexPath.row].fecha
-        
-        let dataDecoded : Data = Data(base64Encoded: givenBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let dataDecoded : Data = Data(base64Encoded: filterGivenBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
         cell.bookImage.image = decodedimage
 
@@ -48,11 +45,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             let cell2 = gottenBooksTable.dequeueReusableCell(withIdentifier: "gottenBook", for: indexPath) as! BookTableViewCell
             
-            cell2.bookTitle.text = gottenBooks[indexPath.row].titulo
-            
-            cell2.bookISBN.text = gottenBooks[indexPath.row].isbn
-            
-            cell2.tradeDate.text = gottenBooks[indexPath.row].fecha
+            cell2.bookTitle.text = filterGottenBooks[indexPath.row].titulo
+            cell2.bookISBN.text = filterGottenBooks[indexPath.row].isbn
+            cell2.tradeDate.text = filterGottenBooks[indexPath.row].fecha
             
             let dataDecoded : Data = Data(base64Encoded: gottenBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
             let decodedimage = UIImage(data: dataDecoded)
@@ -61,15 +56,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             return cell2
             
         }
-        
-        
-        
+
         return cell
-        
     }
-    
-    
-    
+
     func givenBooksApi() {
         
         guard let url = URL(string: "https://bebooks.onrender.com/givenBooks") else { return }
@@ -87,6 +77,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let decoder = JSONDecoder()
                 self.givenBooks = try decoder.decode([ChangedBook].self, from: data)
                 DispatchQueue.main.async {
+                    self.filterGivenBooks = self.givenBooks
                     self.givenBooksTable.reloadData()
                 }
 
@@ -114,6 +105,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let decoder = JSONDecoder()
                 self.gottenBooks = try decoder.decode([ChangedBook].self, from: data)
                 DispatchQueue.main.async {
+                    self.filterGottenBooks = self.gottenBooks
                     self.gottenBooksTable.reloadData()
                 }
             } catch let error {
@@ -122,4 +114,24 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }.resume()
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: filtrar por el texto del search bar
+        if searchBar == givenBooksSearchBar {
+            if searchBar.text != "" {
+                filterGivenBooks = self.givenBooks.filter({$0.titulo.contains(searchText)})
+                givenBooksTable.reloadData()
+            } else {
+                filterGivenBooks = self.givenBooks
+                givenBooksTable.reloadData()
+            }
+        } else {
+            if searchBar.text != "" {
+                filterGottenBooks = self.gottenBooks.filter({$0.titulo.contains(searchText)})
+                gottenBooksTable.reloadData()
+            } else {
+                filterGottenBooks = self.gottenBooks
+                gottenBooksTable.reloadData()
+            }
+        }
+    }
 }

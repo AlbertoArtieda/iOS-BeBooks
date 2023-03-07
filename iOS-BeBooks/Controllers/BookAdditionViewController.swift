@@ -1,8 +1,8 @@
 import UIKit
 
-class BookAdditionViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class BookAdditionViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UISearchBarDelegate {
     
-    @IBOutlet weak var isbn: UITextField!
+    @IBOutlet weak var isbn: UISearchBar!
     @IBOutlet weak var titulo: UILabel!
     @IBOutlet weak var editoial: UILabel!
     @IBOutlet weak var curso: UILabel!
@@ -17,52 +17,57 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func fillData(_ sender: UIButton) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // 9788468087634 http://127.0.0.1:8000
-        let url =  URL(string:"http://127.0.0.1:8000/getbookinfo")
         
-        var request = URLRequest(url: url!)
-        
-        request.httpMethod = "POST"
-        
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(isbn.text, forHTTPHeaderField: "isbn")
-        
-        URLSession.shared.dataTask(with: request){ data, response, error in
+        if searchText.count == 13 {
+            let url =  URL(string:"http://127.0.0.1:8000/getbookinfo")
             
-            print("El Response \(String(describing: response))")
+            var request = URLRequest(url: url!)
             
-            let json =  try? JSONSerialization.jsonObject(with: data!)
+            request.httpMethod = "POST"
             
-            if json == nil {
-                print("el resultado ha sido NIL")
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error en la búsqueda", message: "No es un libro normalmente utilizado en colegios e institutos", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {action in}))
-                    
-                    self.present(alert, animated: true)
-                }
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.setValue(isbn.text, forHTTPHeaderField: "isbn")
+            
+            URLSession.shared.dataTask(with: request){ data, response, error in
                 
+                print("El Response \(String(describing: response))")
                 
-            } else {
-                print("el resultado ha sido EEXITOSO")
-                var filling: [String] = []
+                let json =  try? JSONSerialization.jsonObject(with: data!)
                 
-                for i in json as! [String] {
-                    print(i)
-                    filling.append(i)
-                }
-                for i in 0...filling.count - 1 {
+                if json == nil {
+                    print("el resultado ha sido NIL")
                     DispatchQueue.main.async {
-                        self.dataToFill[i].text = filling[i]
+                        let alert = UIAlertController(title: "Error en la búsqueda", message: "No es un libro normalmente utilizado en colegios e institutos", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: {action in}))
+                        
+                        self.present(alert, animated: true)
+                        searchBar.text = ""
+                    }
+                    
+                    
+                } else {
+                    print("el resultado ha sido EEXITOSO")
+                    var filling: [String] = []
+                    
+                    for i in json as! [String] {
+                        print(i)
+                        filling.append(i)
+                    }
+                    for i in 0...filling.count - 1 {
+                        DispatchQueue.main.async {
+                            self.dataToFill[i].text = filling[i]
+                        }
                     }
                 }
-            }
-        }.resume()
+            }.resume()
+        }
         
     }
+
     
     @IBAction func addBookPhoto(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -81,7 +86,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func addBook(_ sender: UIButton) {
         
-        if imagen.isHidden == false && titulo.text != "" {
+        if imagen.isHidden == false && titulo.text != "" && isbn.text != "" {
             print("Adelante")
             let url =  URL(string:"http://127.0.0.1:8000/newbook")
             let imageData = imagen.image?.jpegData(compressionQuality: 1)

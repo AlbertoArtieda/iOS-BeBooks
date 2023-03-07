@@ -11,6 +11,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     static var books : [Book] = []
     var nearPerson: [NearPerson] = []
     
+    var filteringBooks = [Book]()
+    
     @IBOutlet weak var tableViewBooks: UITableView!
     @IBOutlet weak var scrollNearPeople: UICollectionView!
     
@@ -19,11 +21,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         getNearPeople()
         BooksApi()
         catchUserInfo()
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         OtherProfileViewController.fromOtherProfile = false
         BookManagingViewController.fromBook = false
-
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,17 +70,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SearchViewController.books.count
+        // return SearchViewController.books.count
+        return filteringBooks.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewBooks.dequeueReusableCell(withIdentifier: "recentBook", for: indexPath) as! BookTableViewCell
         
-        cell.bookTitle.text = SearchViewController.books[indexPath.row].titulo
-        cell.bookISBN.text = "ISBN: " + SearchViewController.books[indexPath.row].isbn
+        cell.bookTitle.text = filteringBooks[indexPath.row].titulo
+        cell.bookISBN.text = "ISBN: " + filteringBooks[indexPath.row].isbn
         
-        let dataDecoded : Data = Data(base64Encoded: SearchViewController.books[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let dataDecoded : Data = Data(base64Encoded: filteringBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
         
         cell.bookImage.image = decodedimage
@@ -89,22 +93,21 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         OtherProfileViewController.fromOtherProfile = false
-        let dataDecoded : Data = Data(base64Encoded: SearchViewController.books[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
+        let dataDecoded : Data = Data(base64Encoded: filteringBooks[indexPath.row].imagen_libro, options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
         
         BookManagingViewController.image = decodedimage
-        BookManagingViewController.name = SearchViewController.books[indexPath.row].titulo
-        BookManagingViewController.isbn = SearchViewController.books[indexPath.row].isbn
+        BookManagingViewController.name = filteringBooks[indexPath.row].titulo
+        BookManagingViewController.isbn = filteringBooks[indexPath.row].isbn
         
-        
-        
-        BookManagingViewController.ownerID = SearchViewController.books[indexPath.row].ID_usuario
+        BookManagingViewController.ownerID = filteringBooks[indexPath.row].ID_usuario
         OtherProfileViewController.userID = BookManagingViewController.ownerID
         print("La ID: " + String(BookManagingViewController.ownerID))
         
         print("Hsciendo segue")
         self.performSegue(withIdentifier: "seeBook", sender: nil)
     }
+    
     
     func BooksApi() {
         
@@ -118,6 +121,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 let decoder = JSONDecoder()
                 SearchViewController.books = try decoder.decode([Book].self, from: data)
                 DispatchQueue.main.async {
+                    self.filteringBooks = SearchViewController.books
                     self.tableViewBooks.reloadData()
                 }
                     
@@ -179,5 +183,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: filtrar por el texto del search bar
+        if searchText != "" {
+            filteringBooks = SearchViewController.books.filter({$0.isbn.contains(searchText)})
+            tableViewBooks.reloadData()
+        } else {
+            filteringBooks = SearchViewController.books
+            tableViewBooks.reloadData()
+        }
     }
 }

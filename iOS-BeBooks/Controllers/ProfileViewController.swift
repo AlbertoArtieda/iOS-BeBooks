@@ -52,6 +52,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        BookManagingViewController.image = ProfileViewController.recBooks[indexPath.row]
+        BookManagingViewController.name = SearchViewController.books[indexPath.row].titulo
+        BookManagingViewController.isbn = SearchViewController.books[indexPath.row].isbn
+        
+        BookManagingViewController.ownerID = SearchViewController.books[indexPath.row].ID_usuario
+        OtherProfileViewController.userID = BookManagingViewController.ownerID
+        print("La ID: " + String(BookManagingViewController.ownerID))
+        
+        print("Hsciendo segue")
+        self.performSegue(withIdentifier: "goBook", sender: nil)
+    }
+    
     // Libros subidos
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personalBooks.count
