@@ -17,6 +17,8 @@ class DataConfirmationViewController: UIViewController {
         super.viewDidLoad()
         let dataDecoded : Data = Data(base64Encoded: "aqui la imagen del libro", options: .ignoreUnknownCharacters) ?? Data()
         let decodedimage = UIImage(data: dataDecoded)
+        bookImage.image = BookManagingViewController.image
+        bookName.text = BookManagingViewController.name
         
         userName.text = ViewController.user.usuario
         userNameLastName.text = ViewController.user.nombre_apellidos

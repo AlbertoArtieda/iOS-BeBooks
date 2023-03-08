@@ -168,8 +168,8 @@
                                     <constraint firstAttribute="width" constant="105" id="toA-Nl-0jK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Libro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATI-mG-upI">
-                                <rect key="frame" x="127" y="291.5" width="160" height="34.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Libro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATI-mG-upI">
+                                <rect key="frame" x="50" y="291.5" width="314" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -297,13 +297,13 @@
                             <constraint firstItem="lL9-2T-gvV" firstAttribute="top" secondItem="63z-lL-L7P" secondAttribute="bottom" constant="5" id="kXB-EI-ysl"/>
                             <constraint firstItem="QBv-uO-gZi" firstAttribute="top" secondItem="SRS-7Z-H7M" secondAttribute="bottom" constant="5" id="nFR-Lh-3Nk"/>
                             <constraint firstItem="7N4-GH-DvR" firstAttribute="top" secondItem="uDW-fr-G21" secondAttribute="top" id="pMb-7m-lyO"/>
-                            <constraint firstItem="uDW-fr-G21" firstAttribute="trailing" secondItem="ATI-mG-upI" secondAttribute="trailing" constant="127" id="pZi-yh-PuW"/>
+                            <constraint firstItem="uDW-fr-G21" firstAttribute="trailing" secondItem="ATI-mG-upI" secondAttribute="trailing" constant="50" id="pZi-yh-PuW"/>
                             <constraint firstItem="SRS-7Z-H7M" firstAttribute="leading" secondItem="uDW-fr-G21" secondAttribute="leading" constant="40" id="pjs-wj-Kna"/>
                             <constraint firstItem="SRS-7Z-H7M" firstAttribute="top" secondItem="Zz2-hs-Zab" secondAttribute="bottom" constant="5" id="rSF-mb-Qpg"/>
                             <constraint firstItem="uDW-fr-G21" firstAttribute="trailing" secondItem="pLT-UU-CwY" secondAttribute="trailing" constant="100" id="srE-lw-H2T"/>
                             <constraint firstItem="63z-lL-L7P" firstAttribute="top" secondItem="5Ov-ot-Ve6" secondAttribute="bottom" constant="5" id="u8Y-WE-NPb"/>
                             <constraint firstItem="5Ov-ot-Ve6" firstAttribute="top" secondItem="YIk-rM-6rv" secondAttribute="bottom" id="ywT-bN-YJt"/>
-                            <constraint firstItem="ATI-mG-upI" firstAttribute="leading" secondItem="uDW-fr-G21" secondAttribute="leading" constant="127" id="z1E-lp-sES"/>
+                            <constraint firstItem="ATI-mG-upI" firstAttribute="leading" secondItem="uDW-fr-G21" secondAttribute="leading" constant="50" id="z1E-lp-sES"/>
                             <constraint firstItem="lL9-2T-gvV" firstAttribute="leading" secondItem="uDW-fr-G21" secondAttribute="leading" constant="40" id="zC9-Ld-1dS"/>
                         </constraints>
                     </view>
@@ -360,8 +360,7 @@
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="returnToSearch:" destination="Vnp-iN-qQr" eventType="touchUpInside" id="J4g-Ea-WBp"/>
-                                    <segue destination="Pbs-Uv-FJI" kind="presentation" identifier="LogOut" modalPresentationStyle="fullScreen" id="dHc-wG-uAL"/>
+                                    <segue destination="Pbs-Uv-FJI" kind="presentation" modalPresentationStyle="fullScreen" id="j9A-u9-zKv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,6 +399,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logOut:" destination="qsZ-Ju-2rk" eventType="touchUpInside" id="acQ-g3-4QH"/>
+                                    <segue destination="DBY-YR-eua" kind="presentation" identifier="LogOut" modalPresentationStyle="fullScreen" id="giQ-SM-HDO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Libros que pueden interesarte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-4s-2d9">
@@ -1754,8 +1754,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dHc-wG-uAL"/>
-        <segue reference="h3j-AE-Lyc"/>
+        <segue reference="Lug-ds-ei1"/>
+        <segue reference="j9A-u9-zKv"/>
+        <segue reference="giQ-SM-HDO"/>
         <segue reference="eaJ-xY-AuB"/>
         <segue reference="nYl-MN-QGQ"/>
         <segue reference="ADE-ig-qtI"/>
