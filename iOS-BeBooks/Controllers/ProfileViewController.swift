@@ -110,4 +110,36 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }.resume()
     }
+    @IBAction func logOut(_ sender: UIButton) {
+        AlertLogOut()
+    }
+    func AlertLogOut(){
+        let refreshAlert = UIAlertController(title: "Cerrar sesión", message: "¿Seguro que quieres salir?", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action: UIAlertAction!) in
+            
+            DispatchQueue.main.async {
+                self.DeleteToken()
+                ViewController.token = ""
+            }
+            self.performSegue(withIdentifier: "LogOut", sender: nil)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func DeleteToken(){
+        guard let url = URL(string: "https://bebooks.onrender.com/deleteToken") else { return }
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue(ViewController.token, forHTTPHeaderField: "token")
+        
+        URLSession.shared.dataTask(with: request) { _,_,_ in
+        }.resume()
+    }
 }

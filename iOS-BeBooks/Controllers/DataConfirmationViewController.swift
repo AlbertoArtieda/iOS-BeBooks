@@ -22,7 +22,7 @@ class DataConfirmationViewController: UIViewController {
         userNameLastName.text = ViewController.user.nombre_apellidos
         userAdress.text = ViewController.user.direccion
         userCP.text = String(ViewController.user.cp)
-        userProvince.text = String(ViewController.user.ID_provincia) // Hay que camiar esto por la provincia en texto
+        userProvince.text = ViewController.user.provincia
         userTelephone.text = String(ViewController.user.telefono)
         // Do any additional setup after loading the view.
     }
