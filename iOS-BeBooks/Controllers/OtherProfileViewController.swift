@@ -52,6 +52,7 @@ class OtherProfileViewController: UIViewController, UITableViewDelegate, UITable
         
         BookManagingViewController.ownName = profileName.text
         BookManagingViewController.ownImage = profileImage.image
+        DataConfirmationViewController.bookDBID = userBooks[indexPath.row].ID_libro
         
         OtherProfileViewController.fromOtherProfile = true
         self.performSegue(withIdentifier: "seeOtherProfileBook", sender: nil)

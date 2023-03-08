@@ -13,10 +13,10 @@ class DataConfirmationViewController: UIViewController {
     @IBOutlet weak var userProvince: UITextField!
     @IBOutlet weak var userTelephone: UITextField!
     
+    static var bookDBID: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataDecoded : Data = Data(base64Encoded: "aqui la imagen del libro", options: .ignoreUnknownCharacters) ?? Data()
-        let decodedimage = UIImage(data: dataDecoded)
         bookImage.image = BookManagingViewController.image
         bookName.text = BookManagingViewController.name
         
@@ -26,6 +26,7 @@ class DataConfirmationViewController: UIViewController {
         userCP.text = String(ViewController.user.cp)
         userProvince.text = ViewController.user.provincia
         userTelephone.text = String(ViewController.user.telefono)
+        print("La id del libro" +  String(DataConfirmationViewController.bookDBID))
         // Do any additional setup after loading the view.
     }
     @IBAction func pay(_ sender: UIButton) {
@@ -38,9 +39,32 @@ class DataConfirmationViewController: UIViewController {
                 
                 self.present(alert, animated: true)
             } else {
+                doPayProccess()
+                print("la fecha: \(Date())")
                 self.performSegue(withIdentifier: "payConfirm", sender: nil)
             }
         }
     }
     
+    func doPayProccess() {
+        let url =  URL(string:"http://127.0.0.1:8000/change")
+
+        let body: [String: Any] = [
+            "fecha": Date(),
+            "ID_user_compra": 0, // El 0 es sólo temporal, ya que se necesita para que el back reciba el json, luego el back pondrá bien 'ID_user_compra'
+            "ID_user_vende": OtherProfileViewController.userID!,
+            "ID_libro": DataConfirmationViewController.bookDBID!
+        ]
+        
+        let finalBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(String(ViewController.token), forHTTPHeaderField: "token")
+        request.httpBody = finalBody
+                
+        URLSession.shared.dataTask(with: request){ data, response, error in
+        }.resume()
+    }
 }

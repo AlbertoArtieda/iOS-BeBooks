@@ -12,7 +12,6 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isbn.text = "Asdfas"
         dataToFill = [titulo, curso, editoial]
         // Do any additional setup after loading the view.
     }

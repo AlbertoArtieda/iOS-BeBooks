@@ -102,6 +102,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         BookManagingViewController.ownerID = filteringBooks[indexPath.row].ID_usuario
         OtherProfileViewController.userID = BookManagingViewController.ownerID
+        DataConfirmationViewController.bookDBID = filteringBooks[indexPath.row].ID_libro
         print("La ID: " + String(BookManagingViewController.ownerID))
         
         print("Hsciendo segue")
