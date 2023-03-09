@@ -13,12 +13,6 @@ class ViewController: UIViewController {
         message.isHidden = true
         formatoTextField()
         //catchUserInfo()
-        let actualDate = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        
-        let dateFormatted = formatter.string(from: actualDate)
-        print("la fecha: \(dateFormatted)")
     }
     
     func formatoTextField() {
@@ -52,14 +46,12 @@ class ViewController: UIViewController {
         }
                 
         URLSession.shared.dataTask(with: request){ data, response, error in
-            print(response as Any)
             if let error = error {
                 print(error)
                 return
             }
             // Si el mensaje que devuelve es correcto accede a la app
             if let httpResponse = response as? HTTPURLResponse {
-                print("statusCode: \(httpResponse.statusCode)")
                             
                 if httpResponse.statusCode == 201 {
                     guard let data = data else { return }

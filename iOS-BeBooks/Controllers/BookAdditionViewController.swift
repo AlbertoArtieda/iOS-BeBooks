@@ -31,13 +31,11 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
             request.setValue(isbn.text, forHTTPHeaderField: "isbn")
             
             URLSession.shared.dataTask(with: request){ data, response, error in
-                
-                print("El Response \(String(describing: response))")
+
                 
                 let json =  try? JSONSerialization.jsonObject(with: data!)
                 
                 if json == nil {
-                    print("el resultado ha sido NIL")
                     DispatchQueue.main.async {
                         let alert = UIAlertController(title: "Error en la búsqueda", message: "No es un libro normalmente utilizado en colegios e institutos", preferredStyle: .alert)
                         
@@ -49,11 +47,9 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
                     
                     
                 } else {
-                    print("el resultado ha sido EEXITOSO")
                     var filling: [String] = []
                     
                     for i in json as! [String] {
-                        print(i)
                         filling.append(i)
                     }
                     for i in 0...filling.count - 1 {
@@ -91,7 +87,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
             let imageData = imagen.image?.jpegData(compressionQuality: 1)
             // Convert image Data to base64 encodded string
             let imagenFinal = (imageData?.base64EncodedString(options: .lineLength64Characters)) ?? ""
-            print(ViewController.token)
+
             let libro: [String: String] = [
                 "isbn": isbn.text!,
                 "titulo": titulo.text!,

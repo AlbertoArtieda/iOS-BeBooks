@@ -60,9 +60,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         BookManagingViewController.ownerID = SearchViewController.books[indexPath.row].ID_usuario
         OtherProfileViewController.userID = BookManagingViewController.ownerID
-        print("La ID: " + String(BookManagingViewController.ownerID))
-        
-        print("Hsciendo segue")
+
         self.performSegue(withIdentifier: "goBook", sender: nil)
     }
     

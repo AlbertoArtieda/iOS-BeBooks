@@ -47,7 +47,7 @@ class ProfileEditionViewController: UIViewController, UIImagePickerControllerDel
         let imageData = newImg.image?.jpegData(compressionQuality: 1)
         // Convert image Data to base64 encodded string
         let imageBase64String = imageData?.base64EncodedString(options: .lineLength64Characters)
-        print(imageBase64String ?? "Could not encode image to Base64")
+
         let imagen: String?
         if newImg.isHidden {
             imagen = imageBase64String

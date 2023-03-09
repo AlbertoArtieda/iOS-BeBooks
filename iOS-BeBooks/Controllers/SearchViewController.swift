@@ -51,10 +51,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == scrollNearPeople {
-            print("Seleccionado!!!!")
-        }
-        print("Seleccionado!!!!")
+
         OtherProfileViewController.name = nearPerson[indexPath.row].nombre_apellidos
 
         let dataDecoded : Data = Data(base64Encoded: nearPerson[indexPath.row].imagen_perfil, options: .ignoreUnknownCharacters) ?? Data()
@@ -62,7 +59,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
         OtherProfileViewController.image = decodedimage
         OtherProfileViewController.userID = nearPerson[indexPath.row].ID_usuario
-        print("Seleccioado")
         
         self.performSegue(withIdentifier: "seeProfile", sender: nil)
         
@@ -103,16 +99,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         BookManagingViewController.ownerID = filteringBooks[indexPath.row].ID_usuario
         OtherProfileViewController.userID = BookManagingViewController.ownerID
         DataConfirmationViewController.bookDBID = filteringBooks[indexPath.row].ID_libro
-        print("La ID: " + String(BookManagingViewController.ownerID))
-        
-        print("Hsciendo segue")
+
         self.performSegue(withIdentifier: "seeBook", sender: nil)
     }
     
     
     func BooksApi() {
         
-        guard let url = URL(string: "https://bebooks.onrender/searchBooks") else { return }
+        guard let url = URL(string: "https://bebooks.onrender.com/searchBooks") else { return }
         
         URLSession.shared.dataTask(with: url) { [self] (data, response, error) in
             
@@ -161,8 +155,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue(ViewController.token, forHTTPHeaderField: "token")
         
-        print("El token : " + ViewController.token)
-        
         URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             
             guard let data = data else { return }
@@ -170,7 +162,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             do {
                 let decoder = JSONDecoder()
                 self.nearPerson = try decoder.decode([NearPerson].self, from: data)
-                print("Las personas: \(self.nearPerson.count)")
                 DispatchQueue.main.async {
                     self.scrollNearPeople.reloadData()
                     
