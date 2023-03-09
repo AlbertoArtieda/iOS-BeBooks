@@ -26,7 +26,7 @@ class DataConfirmationViewController: UIViewController {
         userCP.text = String(ViewController.user.cp)
         userProvince.text = ViewController.user.provincia
         userTelephone.text = String(ViewController.user.telefono)
-        print("La id del libro" +  String(DataConfirmationViewController.bookDBID))
+
         // Do any additional setup after loading the view.
     }
     @IBAction func pay(_ sender: UIButton) {

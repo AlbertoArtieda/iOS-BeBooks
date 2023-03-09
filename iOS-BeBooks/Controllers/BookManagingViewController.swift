@@ -53,7 +53,6 @@ class BookManagingViewController: UIViewController {
                 
                 var personalData: [String: String] = [:]
                 personalData = json as! [String:String]
-                print("Los datos personales: \(personalData)")
                 
                 DispatchQueue.main.async {
                     
