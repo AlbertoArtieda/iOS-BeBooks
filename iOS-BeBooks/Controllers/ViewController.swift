@@ -13,7 +13,12 @@ class ViewController: UIViewController {
         message.isHidden = true
         formatoTextField()
         //catchUserInfo()
-        print("la fecha: \(Date())")
+        let actualDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+        
+        let dateFormatted = formatter.string(from: actualDate)
+        print("la fecha: \(dateFormatted)")
     }
     
     func formatoTextField() {
