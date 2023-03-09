@@ -20,7 +20,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
         // 9788468087634 http://127.0.0.1:8000
         
         if searchText.count == 13 {
-            let url =  URL(string:"http://127.0.0.1:8000/getbookinfo")
+            let url =  URL(string:"https://bebooks.onrender.com/getbookinfo")
             
             var request = URLRequest(url: url!)
             
@@ -87,7 +87,7 @@ class BookAdditionViewController: UIViewController, UIImagePickerControllerDeleg
         
         if imagen.isHidden == false && titulo.text != "" && isbn.text != "" {
             print("Adelante")
-            let url =  URL(string:"http://127.0.0.1:8000/newbook")
+            let url =  URL(string:"https://bebooks.onrender.com/newbook")
             let imageData = imagen.image?.jpegData(compressionQuality: 1)
             // Convert image Data to base64 encodded string
             let imagenFinal = (imageData?.base64EncodedString(options: .lineLength64Characters)) ?? ""

@@ -112,7 +112,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func BooksApi() {
         
-        guard let url = URL(string: "http://127.0.0.1:8000/searchBooks") else { return }
+        guard let url = URL(string: "https://bebooks.onrender/searchBooks") else { return }
         
         URLSession.shared.dataTask(with: url) { [self] (data, response, error) in
             
@@ -154,7 +154,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func getNearPeople() {
-        guard let url = URL(string: "http://127.0.0.1:8000/nearUsers") else { return }
+        guard let url = URL(string: "https://bebooks.onrender.com/nearUsers") else { return }
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"

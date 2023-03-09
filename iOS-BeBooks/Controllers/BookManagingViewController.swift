@@ -39,7 +39,7 @@ class BookManagingViewController: UIViewController {
     
     // TODO: getowner
     func getOwner() {
-        guard let url = URL(string: "http://127.0.0.1:8000/showOwner") else { return }
+        guard let url = URL(string: "https://bebooks.onrender.com/showOwner") else { return }
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"

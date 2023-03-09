@@ -86,7 +86,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func fillUploadedBooks() {
-        guard let url = URL(string: "http://127.0.0.1:8000/personalProfile") else { return }
+        guard let url = URL(string: "https://bebooks.onrender.com/userBooks") else { return }
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"

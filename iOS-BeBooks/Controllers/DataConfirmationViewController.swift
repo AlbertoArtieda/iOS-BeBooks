@@ -48,7 +48,7 @@ class DataConfirmationViewController: UIViewController {
     }
     
     func doPayProccess() {
-        let url =  URL(string:"http://127.0.0.1:8000/change")
+        let url =  URL(string:"https://bebooks.onrender.com/change")
 
         let actualDate = Date()
         let formatter = DateFormatter()
