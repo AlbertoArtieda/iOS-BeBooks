@@ -15,9 +15,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         givenBooksApi()
+        gottenBooksApi()
         super.viewDidLoad()
-        givenBooksTable.dataSource = self
-
         // Do any additional setup after loading the view.
     }
     
@@ -93,13 +92,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let url = URL(string: "https://bebooks.onrender.com/gottenBooks") else { return }
         var request = URLRequest(url: url)
         
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue(ViewController.token, forHTTPHeaderField: "token")
 
         URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             guard let data = data else { return }
-            
+            print("El response de los libros obtenidos\(String(describing: response))")
 
             do {
                 let decoder = JSONDecoder()

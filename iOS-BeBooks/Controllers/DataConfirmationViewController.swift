@@ -49,14 +49,8 @@ class DataConfirmationViewController: UIViewController {
     
     func doPayProccess() {
         let url =  URL(string:"https://bebooks.onrender.com/change")
-
-        let actualDate = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        let dateFormatted = formatter.string(from: actualDate)
         
         let body: [String: Any] = [
-            "fecha": dateFormatted,
             "ID_user_compra": 0, // El 0 es sólo temporal, ya que se necesita para que el back reciba el json, luego el back pondrá bien 'ID_user_compra'
             "ID_user_vende": OtherProfileViewController.userID!,
             "ID_libro": DataConfirmationViewController.bookDBID!
@@ -71,6 +65,9 @@ class DataConfirmationViewController: UIViewController {
         request.httpBody = finalBody
                 
         URLSession.shared.dataTask(with: request){ data, response, error in
+            if let httpResponse = response as? HTTPURLResponse {
+                print(httpResponse)
+            }
         }.resume()
     }
 }
