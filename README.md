@@ -25,7 +25,7 @@ Al abrir la aplicación, se te presentará la pantalla de inicio de sesión. Si 
 
 Una vez que hayas iniciado sesión, puedes agregar libros para intercambiar en tu perfil. Para hacerlo, ve a la pestaña "Agregar libro" y completa los detalles del libro (título, autor, materia, etc.). Luego, haz clic en "Guardar" para agregar el libro a tu perfil.
 
-Para buscar libros, ve a la pestaña "Buscar" y utiliza el campo de búsqueda para buscar libros por título, autor o materia. Haz clic en un libro para ver detalles del libro y el perfil del usuario que lo ofrece. Si estás interesado en el libro, puedes enviar un mensaje al usuario para acordar el intercambio.
+Para buscar libros, ve a la pestaña "Buscar" y utiliza el campo de búsqueda para buscar libros por ISBN. Haz clic en un libro para ver detalles del libro y el perfil del usuario que lo ofrece. Si estás interesado en el libro, puedes obtenerlo pulsando en "Adquirir libro".
 
 ### Créditos
 Esta aplicación fue creada por Alberto Artieda López y Juan Carlos Jaramillo Carrillo.
